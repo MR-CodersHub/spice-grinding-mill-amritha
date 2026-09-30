@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Amritha Spice Mill</title>
+  <meta name="description" content="That page is not here. Search the mill's services and journal, or pick up one of the routes below.">
+  <meta name="theme-color" content="#082052">
+  <meta name="robots" content="noindex, follow">
+
+  <script src="../src/js/theme.js"></script>
+  <script src="../src/js/rtl-toggle.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../src/js/tailwind-config.js"></script>
+
+  <link rel="stylesheet" href="../src/css/style.css">
+  <link rel="stylesheet" href="../src/css/pages.css">
+</head>
+<body data-base="../" data-page="404">
+
+  <div id="site-navbar"></div>
+
+  <main id="main-content">
+
+    <!-- 1. ERROR HERO -->
+    <section class="error-hero">
+      <div class="container">
+        <p class="error-code">404</p>
+        <h1>That Page Has Gone to Ground</h1>
+        <p>Which is usually our fault — we have moved things around more than we should have. The search below covers every service, every article and the main pages.</p>
+
+        <div class="search-hero" style="margin-top:34px;">
+          <div class="search-wrap">
+            <span id="error-search-icon" aria-hidden="true"></span>
+            <label class="sr-only" for="error-search">Search the site</label>
+            <input class="search-input" id="error-search" type="search" placeholder="Search services, articles, pages…" autocomplete="off">
+          </div>
+          <p class="filter-count"><strong id="error-count">0</strong> results</p>
+        </div>
+
+        <div class="error-actions">
+          <a class="btn btn-gold" href="../index.html">Back to the home page</a>
+          <a class="btn btn-outline-light" href="contact.html">Tell us what broke</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SEARCH RESULTS -->
+    <section class="page-section-tight" id="search-section" aria-labelledby="results-heading" hidden>
+      <div class="container">
+        <h2 id="results-heading" class="sr-only">Search results</h2>
+        <div id="search-results" aria-live="polite"></div>
+
+        <div class="result-empty" id="error-empty">
+          <h3>Nothing found for that</h3>
+          <p>Try a single keyword such as “turmeric”, “blend” or “storage”. Or ask us directly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. WHERE YOU PROBABLY WANTED TO GO -->
+    <section class="page-section-sm section-alt" aria-labelledby="routes-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">THE USUAL SUSPECTS</span>
+          <h2 id="routes-heading">Where You Probably Wanted to Go</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+
+        <div class="grid grid-3" id="route-cards"></div>
+      </div>
+    </section>
+
+    <!-- 4. THE MOST-VISITED SERVICES -->
+    <section class="page-section-sm" aria-labelledby="service-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">STARTING POINTS</span>
+          <h2 id="service-heading">The Services Most People Come For</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+
+        <div class="grid grid-3" id="service-preview"></div>
+
+        <p style="text-align:center;margin-top:34px;">
+          <a class="btn btn-outline-dark" href="services.html">See all nine services</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. THE SMALL PRINT OF A 404 -->
+    <section class="page-section-sm section-navy" aria-labelledby="note-heading">
+      <div class="container">
+        <div class="grid grid-2" style="gap:44px;align-items:start;">
+          <div>
+            <span class="eyebrow">A NOTE ON LINKS</span>
+            <h2 id="note-heading" style="color:var(--color-primary-text);margin:12px 0 18px;">If a Link Here Brought You to This Page</h2>
+            <p style="color:rgba(248,240,229,.78);line-height:1.8;">Then that is our mistake, and we would like to fix it. Tell us which page sent you and we will repair the link the same week.</p>
+            <p style="color:rgba(248,240,229,.78);line-height:1.8;">If you typed a service address by hand, the service briefs all take the form <span style="font-family:var(--font-mono);font-size:.92em;color:var(--color-soft-gold);">service-details.html?id=stone-chakki-milling</span> — nine of them, listed on the catalogue page.</p>
+          </div>
+          <div class="form-card" style="background:rgba(255,255,255,.05);border-color:rgba(201,164,92,.35);">
+            <h3 style="color:var(--color-soft-gold);">Report a broken link</h3>
+            <p class="form-intro" style="color:rgba(248,240,229,.75);">Thirty seconds of your time, and the page stops being broken for everyone else.</p>
+
+            <form id="broken-link-form" data-validate novalidate
+                  data-success-title="Reported — thank you"
+                  data-success-message="We have the page you came from and we will repair the link this week. Genuinely, thank you."
+                  data-success-toast="Broken link reported — thank you.">
+
+              <div class="field">
+                <label for="bl-page">Which page sent you? <span class="req">*</span></label>
+                <input id="bl-page" name="page" type="text" required minlength="2" placeholder="e.g. the Journal, or an email newsletter">
+              </div>
+              <div class="field">
+                <label for="bl-email">Your email <span class="req">*</span></label>
+                <input id="bl-email" name="email" type="email" required autocomplete="email" placeholder="you@kitchen.com">
+              </div>
+              <div class="field">
+                <label for="bl-target">Where were you trying to go? <span class="req">*</span></label>
+                <input id="bl-target" name="target" type="text" required minlength="2" placeholder="Anything you remember of it">
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-gold">Report it</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../src/js/data/images.js"></script>
+  <script src="../src/js/data/icons.js"></script>
+  <script src="../src/js/data/services.js"></script>
+  <script src="../src/js/data/posts.js"></script>
+
+  <script src="../src/js/toast.js"></script>
+  <script src="../src/js/navbar.js"></script>
+  <script src="../src/js/footer.js"></script>
+  <script src="../src/js/ui.js"></script>
+  <script src="../src/js/form-validation.js"></script>
+  <script src="../src/js/pages/kit.js"></script>
+  <script src="../src/js/pages/error-page.js"></script>
+
+</body>
+</html>

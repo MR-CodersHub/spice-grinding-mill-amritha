@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal Article | Amritha Spice Mill</title>
+  <meta name="description" content="A working note from the Amritha Spice Mill: measured comparisons, sourcing reports and blend development from a third-generation mill.">
+  <meta name="theme-color" content="#082052">
+
+  <script src="../src/js/theme.js"></script>
+  <script src="../src/js/rtl-toggle.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../src/js/tailwind-config.js"></script>
+
+  <link rel="stylesheet" href="../src/css/style.css">
+  <link rel="stylesheet" href="../src/css/pages.css">
+</head>
+<body data-base="../" data-page="blog-details">
+
+  <div id="site-navbar"></div>
+
+  <main id="main-content">
+
+    <!-- 1. ARTICLE HEADER -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="crumb-sep" aria-hidden="true">/</span>
+          <a href="blog.html">The Journal</a>
+          <span class="crumb-sep" aria-hidden="true">/</span>
+          <span class="crumb-current" id="crumb-current" aria-current="page">Loading…</span>
+        </nav>
+
+        <div class="article-header" style="margin-bottom:0;border-bottom:0;padding-bottom:0;">
+          <span class="eyebrow" id="article-category">Journal</span>
+          <h1 id="article-title">Article</h1>
+          <p id="article-excerpt" style="font-size:1.08rem;color:var(--color-muted-text);line-height:1.8;max-width:70ch;"></p>
+
+          <div class="article-meta" style="margin-top:22px;">
+            <div class="article-author">
+              <span class="avatar" id="article-initials" aria-hidden="true">—</span>
+              <div>
+                <strong id="article-author">Loading</strong>
+                <span id="article-role">—</span>
+              </div>
+            </div>
+            <span class="meta-pill" id="article-date">—</span>
+            <span class="meta-pill" id="article-read">—</span>
+          </div>
+
+          <div class="share-row">
+            <span class="share-label">Share</span>
+            <span id="share-buttons" style="display:inline-flex;gap:10px;flex-wrap:wrap;"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ARTICLE BODY + SIDEBAR -->
+    <section class="page-section-tight" aria-label="Article">
+      <div class="container">
+        <div class="article-layout">
+
+          <article>
+            <figure class="article-figure" style="margin-top:0;">
+              <img id="article-image" src="" alt="" width="1600" height="900" fetchpriority="high">
+              <figcaption id="article-caption"></figcaption>
+            </figure>
+
+            <div class="prose" id="article-body">
+              <p>Loading the article…</p>
+            </div>
+
+            <div class="article-tags" id="article-tags" hidden>
+              <span class="share-label" style="display:block;margin-bottom:12px;">Filed under</span>
+              <div class="tag-row" id="article-tag-row"></div>
+            </div>
+
+            <div class="article-footer" id="article-footer" hidden>
+              <span class="avatar lg" id="footer-initials" aria-hidden="true">—</span>
+              <div class="af-body">
+                <h4 id="footer-name">—</h4>
+                <p id="footer-bio">—</p>
+              </div>
+              <a class="btn btn-outline-dark btn-sm" id="footer-more" href="blog.html">More from the mill</a>
+            </div>
+
+            <nav class="share-row" aria-label="Article navigation" style="margin-top:34px;">
+              <a class="btn btn-outline-dark btn-sm" id="prev-post" href="blog.html">Previous article</a>
+              <a class="btn btn-outline-dark btn-sm" id="next-post" href="blog.html">Next article</a>
+            </nav>
+          </article>
+
+          <aside class="sidebar">
+            <nav class="legal-toc" id="toc" hidden aria-label="On this page">
+              <h4>On this page</h4>
+              <ol id="toc-list"></ol>
+            </nav>
+
+            <div class="widget">
+              <h4>Keep reading</h4>
+              <div id="sidebar-posts"></div>
+            </div>
+
+            <div class="widget widget-dark">
+              <h4>Read it on your own spices</h4>
+              <p>Most of what we write about is something we do for a client every week. If it applies to your kitchen, we can do it for you.</p>
+              <a class="btn btn-gold btn-sm btn-block" href="services.html">See the services</a>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. KEY TAKEAWAYS -->
+    <section class="page-section-sm section-alt" aria-labelledby="takeaway-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">IF YOU READ NOTHING ELSE</span>
+          <h2 id="takeaway-heading">What to Take Away</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+        <div class="grid grid-3" id="takeaway-cards"></div>
+      </div>
+    </section>
+
+    <!-- 4. RELATED ARTICLES -->
+    <section class="page-section-sm" aria-labelledby="related-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">READ NEXT</span>
+          <h2 id="related-heading">Related Articles</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+        <div class="grid grid-3" id="related-grid"></div>
+      </div>
+    </section>
+
+    <!-- 5. QUESTION -->
+    <section class="page-section-sm" aria-labelledby="question-heading">
+      <div class="container">
+        <div class="grid grid-sidebar-right" style="align-items:start;">
+          <div class="form-card">
+            <span class="eyebrow">DISAGREE, OR NEED MORE?</span>
+            <h3 id="question-heading" style="margin-top:8px;">Ask About This Article</h3>
+            <p class="form-intro">If something here does not match what you see in your own kitchen, say so. Corrections get published, and they are the most useful thing we get.</p>
+
+            <form data-validate novalidate
+                  data-success-title="Question received"
+                  data-success-message="Thank you. The author reads every response on this article and replies personally — usually within two working days."
+                  data-success-toast="Sent to the author — thank you.">
+
+              <input type="hidden" id="question-post-id" name="postId" value="">
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="q-name">Name <span class="req">*</span></label>
+                  <input id="q-name" name="name" type="text" required minlength="2" autocomplete="name" placeholder="Anita Menon">
+                </div>
+                <div class="field">
+                  <label for="q-email">Email <span class="req">*</span></label>
+                  <input id="q-email" name="email" type="email" required autocomplete="email" placeholder="anita@kitchen.com">
+                </div>
+                <div class="field span-2">
+                  <label for="q-message">Your question or correction <span class="req">*</span></label>
+                  <textarea id="q-message" name="message" rows="5" required minlength="20" maxlength="1200"
+                            placeholder="What did we get wrong, or what did you see differently?"></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Send to the author</button>
+                <span style="font-size:.82rem;color:var(--color-muted-text);">Replies come from a person, not a queue.</span>
+              </div>
+            </form>
+          </div>
+
+          <aside class="sidebar">
+            <div class="widget">
+              <h4>About the author</h4>
+              <p style="font-size:.9rem;color:var(--color-muted-text);line-height:1.7;" id="author-widget-bio">—</p>
+              <ul class="plain" id="author-widget-links"></ul>
+            </div>
+            <div class="widget">
+              <h4>Written in the mill</h4>
+              <p style="font-size:.9rem;color:var(--color-muted-text);line-height:1.7;">Articles are drafted on the mill floor and measured there before they are published. Nothing goes live that we have not run ourselves.</p>
+              <a class="btn btn-outline-dark btn-sm btn-block" href="about.html">Inside the mill</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../src/js/data/images.js"></script>
+  <script src="../src/js/data/icons.js"></script>
+  <script src="../src/js/data/posts.js"></script>
+  <script src="../src/js/data/services.js"></script>
+
+  <script src="../src/js/toast.js"></script>
+  <script src="../src/js/navbar.js"></script>
+  <script src="../src/js/footer.js"></script>
+  <script src="../src/js/ui.js"></script>
+  <script src="../src/js/form-validation.js"></script>
+  <script src="../src/js/pages/kit.js"></script>
+  <script src="../src/js/pages/blog-details.js"></script>
+
+</body>
+</html>

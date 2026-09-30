@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services Catalogue | Amritha Spice Mill</title>
+  <meta name="description" content="Nine mill services: cold stone chakki milling, custom masala blending, whole-spice grading, commercial bulk supply, private-label packaging, flavour consultancy, gifting, kitchen training and herb infusion oils.">
+  <meta name="theme-color" content="#082052">
+
+  <script src="../src/js/theme.js"></script>
+  <script src="../src/js/rtl-toggle.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../src/js/tailwind-config.js"></script>
+
+  <link rel="stylesheet" href="../src/css/style.css">
+  <link rel="stylesheet" href="../src/css/pages.css">
+</head>
+<body data-base="../" data-page="services">
+
+  <div id="site-navbar"></div>
+
+  <main id="main-content">
+
+    <!-- 1. PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="crumb-sep" aria-hidden="true">/</span>
+          <span class="crumb-current" aria-current="page">Services</span>
+        </nav>
+        <span class="eyebrow">NINE SERVICES • ONE STANDARD</span>
+        <h1>The Service Catalogue</h1>
+        <p>Everything we do happens inside one building, on one set of stones, under one person&rsquo;s supervision. Choose the line that matches what you need, or ask us to combine them.</p>
+      </div>
+    </section>
+
+    <!-- 2. CATALOGUE FILTERS + GRID -->
+    <section class="page-section" aria-labelledby="catalogue-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">SELECT A LINE</span>
+          <h2 id="catalogue-heading">What We Do, and What It Costs</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+          <p>Every service below opens into a full brief: the process, the technical specifications, indicative pricing and the questions we are asked most.</p>
+        </div>
+
+        <div class="filter-bar" style="margin-bottom:34px;">
+          <div class="search-wrap">
+            <span id="svc-search-icon" aria-hidden="true"></span>
+            <label class="sr-only" for="service-search">Search services</label>
+            <input class="search-input" id="service-search" type="search" placeholder="Search “blending”, “bulk”, “training”…" autocomplete="off">
+          </div>
+          <div class="filter-chips" data-filter-group="services" role="group" aria-label="Filter services by type">
+            <button class="filter-chip active" data-filter-value="all" type="button">All</button>
+            <button class="filter-chip" data-filter-value="milling" type="button">Milling</button>
+            <button class="filter-chip" data-filter-value="blending" type="button">Blending</button>
+            <button class="filter-chip" data-filter-value="trade" type="button">Trade</button>
+            <button class="filter-chip" data-filter-value="packaging" type="button">Packaging</button>
+            <button class="filter-chip" data-filter-value="advisory" type="button">Advisory</button>
+            <button class="filter-chip" data-filter-value="gifting" type="button">Gifting</button>
+            <button class="filter-chip" data-filter-value="training" type="button">Training</button>
+          </div>
+          <p class="filter-count"><strong id="service-count">9</strong> of 9 services</p>
+        </div>
+
+        <div class="grid grid-3" id="service-grid" aria-live="polite">
+          <noscript><p>Enable JavaScript to filter the catalogue.</p></noscript>
+        </div>
+
+        <div class="result-empty" id="service-empty">
+          <h3>No service matches that search</h3>
+          <p>Try a broader term, or tell us what you are trying to achieve and we will point you at the right line.</p>
+          <p style="margin-top:18px;"><a href="contact.html" class="btn btn-primary btn-sm">Ask the trade desk</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. WHAT MAKES THE MILL DIFFERENT -->
+    <section class="page-section section-navy" aria-labelledby="difference-heading">
+      <div class="container">
+        <div class="grid grid-2" style="align-items:center;gap:56px;">
+          <div>
+            <span class="eyebrow">THE MILL, IN FOUR CLAIMS</span>
+            <h2 id="difference-heading" style="color:var(--color-primary-text);margin:12px 0 20px;">Why the Same Spice Smells Different Here</h2>
+            <p style="color:rgba(248,240,229,.78);line-height:1.8;margin-bottom:26px;">These are the four commitments behind every line in the catalogue, and the four we are willing to be measured against.</p>
+            <ul class="col-check">
+              <li><strong>Temperature is logged, not assumed.</strong> A probe thermometer on every batch, recorded on the batch card.</li>
+              <li><strong>Raw material is traceable to a field.</strong> District, grower and harvest window travel with the spice.</li>
+              <li><strong>Nothing is blended to hit a price.</strong> If a lot is not good enough we decline the lot, not the standard.</li>
+              <li><strong>Grind profiles are calibrated stones.</strong> Four verified granule sizes from one set of runners.</li>
+            </ul>
+          </div>
+          <div class="grid grid-2" style="gap:20px;">
+            <div class="icon-card" style="background:rgba(255,255,255,.04);border-color:rgba(201,164,92,.35);">
+              <div class="icon-wrap" style="background:rgba(201,164,92,.16);border-color:var(--color-soft-gold);color:var(--color-soft-gold);">
+                <span id="icon-cold" aria-hidden="true"></span>
+              </div>
+              <h3 style="color:var(--color-soft-gold);">Below 38&nbsp;&deg;C</h3>
+              <p style="color:rgba(248,240,229,.75);">Every batch temperature is written on the card that ships with the pack.</p>
+            </div>
+            <div class="icon-card" style="background:rgba(255,255,255,.04);border-color:rgba(201,164,92,.35);">
+              <div class="icon-wrap" style="background:rgba(201,164,92,.16);border-color:var(--color-soft-gold);color:var(--color-soft-gold);">
+                <span id="icon-batch" aria-hidden="true"></span>
+              </div>
+              <h3 style="color:var(--color-soft-gold);">5&nbsp;kg charges</h3>
+              <p style="color:rgba(248,240,229,.75);">Small batches keep the stone face cool and the particle size even.</p>
+            </div>
+            <div class="icon-card" style="background:rgba(255,255,255,.04);border-color:rgba(201,164,92,.35);">
+              <div class="icon-wrap" style="background:rgba(201,164,92,.16);border-color:var(--color-soft-gold);color:var(--color-soft-gold);">
+                <span id="icon-trace" aria-hidden="true"></span>
+              </div>
+              <h3 style="color:var(--color-soft-gold);">Full traceability</h3>
+              <p style="color:rgba(248,240,229,.75);">Batch code, harvest date and origin on every single pack.</p>
+            </div>
+            <div class="icon-card" style="background:rgba(255,255,255,.04);border-color:rgba(201,164,92,.35);">
+              <div class="icon-wrap" style="background:rgba(201,164,92,.16);border-color:var(--color-soft-gold);color:var(--color-soft-gold);">
+                <span id="icon-lab" aria-hidden="true"></span>
+              </div>
+              <h3 style="color:var(--color-soft-gold);">Lab verified</h3>
+              <p style="color:rgba(248,240,229,.75);">Curcumin, volatile oil and moisture tested in-house every lot.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. THE MILL PROCESS -->
+    <section class="page-section" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">FROM FIELD TO FOLDED PACK</span>
+          <h2 id="process-heading">The Common Process</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step reveal">
+            <div class="process-num">01</div>
+            <h3>Source</h3>
+            <p>Direct contracts with 2,400 farming families across Salem, Guntur, Ramganj Mandi, Unjha and the Idukki highlands. No brokers in the chain.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">02</div>
+            <h3>Inspect</h3>
+            <p>Moisture, foreign matter, volatile oil and curcumin measured on arrival. A failing lot goes back to the grower, with a phone call, not a rejection slip.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">03</div>
+            <h3>Mill cold</h3>
+            <p>Slow granite runners at low RPM. Batch temperature recorded before and after. If the run exceeds 38&nbsp;&deg;C the batch is reground, not shipped.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">04</div>
+            <h3>Prove &amp; pack</h3>
+            <p>Particle-size check, organoleptic sniff by two millers, then nitrogen-flushed packing with the batch card folded into the lid.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SERVICE BRIEFS TABLE -->
+    <section class="page-section section-alt" aria-labelledby="briefs-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">AT A GLANCE</span>
+          <h2 id="briefs-heading">Turnaround, Minimums and Typical Use</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" id="service-briefs">
+            <caption>Indicative figures. Final pricing depends on raw material, granule profile and packaging — every brief lists what changes the price.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Service</th>
+                <th scope="col">Category</th>
+                <th scope="col">Turnaround</th>
+                <th scope="col">Minimum</th>
+                <th scope="col">Best for</th>
+                <th scope="col"><span class="sr-only">Open brief</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Loading…</strong></td><td colspan="5">Reading the service catalogue…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ENQUIRY FORM -->
+    <section class="page-section" aria-labelledby="enquiry-heading">
+      <div class="container">
+        <div class="grid grid-sidebar-right" style="align-items:start;">
+          <div class="form-card">
+            <span class="eyebrow">NOT SURE WHICH LINE?</span>
+            <h3 id="enquiry-heading" style="margin-top:8px;">Tell Us the Problem</h3>
+            <p class="form-intro">Describe the dish, the volume and the deadline. We will come back with the shortest route to a solution, even if that route is not us.</p>
+
+            <form data-validate novalidate
+                  data-success-title="Enquiry received"
+                  data-success-message="A Master Miller will reply within one working day with a recommended service, an indicative price and a realistic timeline."
+                  data-success-toast="Enquiry received — we will reply within one working day.">
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="enq-name">Name <span class="req">*</span></label>
+                  <input id="enq-name" name="name" type="text" required minlength="2" autocomplete="name" placeholder="Meera Iyer">
+                  <div class="form-error" data-error-for="enq-name">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>Please tell us your name.</span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="enq-email">Email <span class="req">*</span></label>
+                  <input id="enq-email" name="email" type="email" required autocomplete="email" placeholder="meera@kitchen.com">
+                  <div class="form-error" data-error-for="enq-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>Enter a valid email address.</span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="enq-phone">Phone / WhatsApp</label>
+                  <input id="enq-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210">
+                  <div class="form-error" data-error-for="enq-phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>Use digits, spaces and + only.</span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="enq-service">Service of interest</label>
+                  <select id="enq-service" name="service">
+                    <option value="unsure">Not sure — advise me</option>
+                  </select>
+                </div>
+                <div class="field span-2">
+                  <label for="enq-volume">Approximate volume</label>
+                  <select id="enq-volume" name="volume">
+                    <option value="under-1">Under 1 kg — retail / pantry</option>
+                    <option value="1-5">1 – 5 kg — home kitchen</option>
+                    <option value="5-50" selected>5 – 50 kg — restaurant</option>
+                    <option value="50-500">50 – 500 kg — multi-site</option>
+                    <option value="500+">500 kg+ — contract</option>
+                  </select>
+                </div>
+                <div class="field span-2">
+                  <label for="enq-brief">What are you trying to do? <span class="req">*</span></label>
+                  <textarea id="enq-brief" name="brief" rows="5" required minlength="20" maxlength="1200"
+                            placeholder="Dish, menu, volume, deadline, and anything that has already gone wrong…"></textarea>
+                  <div class="form-error" data-error-for="enq-brief">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>A sentence or two, please — at least 20 characters.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Send the enquiry</button>
+                <span style="font-size:.82rem;color:var(--color-muted-text);">We reply within one working day.</span>
+              </div>
+            </form>
+          </div>
+
+          <aside class="sidebar">
+            <div class="widget">
+              <h4>Direct to the mill</h4>
+              <ul class="dept-list">
+                <li>
+                  <span id="icon-phone" aria-hidden="true"></span>
+                  <div>
+                    <strong>Trade desk</strong>
+                    <span>Mon – Sat, 8am – 8pm IST</span>
+                    <a href="tel:+919840123456">+91 98401 23456</a>
+                  </div>
+                </li>
+                <li>
+                  <span id="icon-mail" aria-hidden="true"></span>
+                  <div>
+                    <strong>Trade email</strong>
+                    <a href="mailto:trade@amrithaspices.in">trade@amrithaspices.in</a>
+                  </div>
+                </li>
+                <li>
+                  <span id="icon-building" aria-hidden="true"></span>
+                  <div>
+                    <strong>Visit the mill</strong>
+                    <span>48 Heritage Spice Quarter, Mattancherry, Kochi 682002</span>
+                    <a href="contact.html">Directions &amp; hours</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="widget widget-dark">
+              <h4>Popular with kitchens</h4>
+              <p>These three lines account for most of the work we do.</p>
+              <ul class="footer-links">
+                <li><a href="service-details.html?id=stone-chakki-milling">Cold Stone Chakki Milling</a></li>
+                <li><a href="service-details.html?id=custom-masala-blending">Signature Masala Blending</a></li>
+                <li><a href="service-details.html?id=commercial-bulk-supply">Commercial Bulk Supply</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CLOSING CTA -->
+    <section class="cta-strip">
+      <div class="container">
+        <h2>Every Brief Starts With a Conversation</h2>
+        <p>Bring a recipe, a menu, or a production problem. We will tell you honestly whether a spice mill is the right answer.</p>
+        <div class="btn-row">
+          <a href="contact.html" class="btn btn-gold">Book a Mill Visit</a>
+          <a href="pricing.html" class="btn btn-outline-light">See Plans &amp; Pricing</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../src/js/data/images.js"></script>
+  <script src="../src/js/data/icons.js"></script>
+  <script src="../src/js/data/services.js"></script>
+
+  <script src="../src/js/toast.js"></script>
+  <script src="../src/js/navbar.js"></script>
+  <script src="../src/js/footer.js"></script>
+  <script src="../src/js/ui.js"></script>
+  <script src="../src/js/form-validation.js"></script>
+  <script src="../src/js/pages/kit.js"></script>
+  <script src="../src/js/pages/services.js"></script>
+
+</body>
+</html>

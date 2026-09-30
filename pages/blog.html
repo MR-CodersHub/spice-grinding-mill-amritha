@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Journal | Amritha Spice Mill</title>
+  <meta name="description" content="Measured comparisons, sourcing reports, blend development and technique from the Amritha Spice Mill — the working notes of a third-generation mill.">
+  <meta name="theme-color" content="#082052">
+
+  <script src="../src/js/theme.js"></script>
+  <script src="../src/js/rtl-toggle.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../src/js/tailwind-config.js"></script>
+
+  <link rel="stylesheet" href="../src/css/style.css">
+  <link rel="stylesheet" href="../src/css/pages.css">
+</head>
+<body data-base="../" data-page="blog">
+
+  <div id="site-navbar"></div>
+
+  <main id="main-content">
+
+    <!-- 1. PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="crumb-sep" aria-hidden="true">/</span>
+          <span class="crumb-current" aria-current="page">The Journal</span>
+        </nav>
+        <span class="eyebrow">MEASURED NOTES FROM THE MILL</span>
+        <h1>The Amritha Journal</h1>
+        <p>No keyword stuffing and no listicles. What goes here is what we measured, what we learned in sourcing, and what changed in the mill-room because of it.</p>
+      </div>
+    </section>
+
+    <!-- 2. FEATURED ARTICLE -->
+    <section class="page-section-tight" aria-labelledby="featured-heading">
+      <div class="container">
+        <h2 id="featured-heading" class="sr-only">Featured article</h2>
+        <div id="featured-slot">
+          <noscript><p>Enable JavaScript to read the Journal, or visit an article directly.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SEARCH + FILTERS + GRID -->
+    <section class="page-section-sm" aria-labelledby="archive-heading">
+      <div class="container">
+        <h2 id="archive-heading" class="sr-only">All articles</h2>
+
+        <div class="filter-bar" style="margin-bottom:34px;">
+          <div class="search-wrap">
+            <span id="blog-search-icon" aria-hidden="true"></span>
+            <label class="sr-only" for="blog-search">Search the Journal</label>
+            <input class="search-input" id="blog-search" type="search" placeholder="Search “volatile oils”, “turmeric”, “masala”…" autocomplete="off">
+          </div>
+          <div class="filter-chips" data-filter-group="posts" role="group" aria-label="Filter articles by category">
+            <button class="filter-chip active" data-filter-value="all" type="button">All</button>
+          </div>
+          <p class="filter-count"><strong id="blog-count">0</strong> of <span id="blog-total">0</span> articles</p>
+        </div>
+
+        <div class="grid grid-3" id="blog-grid" aria-live="polite">
+          <noscript><p>Enable JavaScript to browse the Journal.</p></noscript>
+        </div>
+
+        <div class="result-empty" id="blog-empty">
+          <h3>Nothing matches that search</h3>
+          <p>Try a single keyword, or browse everything we have written.</p>
+          <p style="margin-top:18px;"><button class="btn btn-primary btn-sm" id="blog-reset" type="button">Clear filters</button></p>
+        </div>
+
+        <div class="pagination" id="blog-pagination" aria-label="Article pages"></div>
+      </div>
+    </section>
+
+    <!-- 4. BY CATEGORY -->
+    <section class="page-section-sm section-alt" aria-labelledby="categories-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">BROWSE BY SUBJECT</span>
+          <h2 id="categories-heading">Where Would You Like to Start?</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+        <div class="grid grid-3" id="category-cards"></div>
+      </div>
+    </section>
+
+    <!-- 5. AUTHOR STRIP -->
+    <section class="page-section-sm" aria-labelledby="authors-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">WHO WRITES THIS</span>
+          <h2 id="authors-heading">The People Behind the Notes</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+        <div class="grid grid-3" id="author-cards"></div>
+      </div>
+    </section>
+
+    <!-- 6. ARTICLE REQUEST -->
+    <section class="page-section-sm section-navy" aria-labelledby="ask-heading">
+      <div class="container">
+        <div class="grid grid-sidebar-right" style="align-items:start;">
+          <div>
+            <span class="eyebrow">SUGGEST A TEST</span>
+            <h2 id="ask-heading" style="color:var(--color-primary-text);margin:12px 0 18px;">Ask Us to Measure Something</h2>
+            <p style="color:rgba(248,240,229,.78);line-height:1.8;">Half the articles here started as a question from a customer, usually a slightly suspicious one. If you want to know whether a claim about spice is true, or whether two lots are genuinely different, ask. We will run the test and publish the numbers, including the ones that make us look ordinary.</p>
+            <ul class="col-check" style="margin-top:24px;">
+              <li><strong>“Is this really single-origin?”</strong> We will test it and tell you what the fingerprint says.</li>
+              <li><strong>“Why does my masala taste different every batch?”</strong> Usually granule size. Occasionally something worse.</li>
+              <li><strong>“Can you blend this at 40% less heat?”</strong> Yes, and we will explain exactly what changes when you do.</li>
+            </ul>
+          </div>
+
+          <aside class="sidebar">
+            <div class="form-card" style="padding:28px 24px;">
+              <h3 style="font-size:1.2rem;">Request an article</h3>
+              <p class="form-intro" style="margin-bottom:18px;">Short is fine. A question and a dish is plenty.</p>
+
+              <form data-validate novalidate
+                    data-success-title="Request logged"
+                    data-success-message="Thank you. If the question is testable we will run it and send you the article when it is published."
+                    data-success-toast="Request logged — thank you for the question.">
+                <div class="field">
+                  <label for="jr-name">Name <span class="req">*</span></label>
+                  <input id="jr-name" name="name" type="text" required minlength="2" autocomplete="name" placeholder="Your name">
+                </div>
+                <div class="field">
+                  <label for="jr-email">Email <span class="req">*</span></label>
+                  <input id="jr-email" name="email" type="email" required autocomplete="email" placeholder="you@kitchen.com">
+                </div>
+                <div class="field">
+                  <label for="jr-question">Your question <span class="req">*</span></label>
+                  <textarea id="jr-question" name="question" rows="4" required minlength="15" maxlength="800"
+                            placeholder="What would you like us to test?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-gold btn-block">Send it to the mill</button>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../src/js/data/images.js"></script>
+  <script src="../src/js/data/icons.js"></script>
+  <script src="../src/js/data/posts.js"></script>
+  <script src="../src/js/data/services.js"></script>
+
+  <script src="../src/js/toast.js"></script>
+  <script src="../src/js/navbar.js"></script>
+  <script src="../src/js/footer.js"></script>
+  <script src="../src/js/ui.js"></script>
+  <script src="../src/js/form-validation.js"></script>
+  <script src="../src/js/pages/kit.js"></script>
+  <script src="../src/js/pages/blog.js"></script>
+
+</body>
+</html>

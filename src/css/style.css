@@ -1,0 +1,1835 @@
+/* ==========================================================================
+   AMRITHA TRADITIONAL SPICE MILL — PREMIUM HERITAGE STYLESHEET
+   Inspired by classic traditional editorial food branding
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS VARIABLES & DESIGN TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand Color Palette */
+  --color-primary: #082052;          /* Deep Heritage Navy */
+  --color-primary-dark: #051433;     /* Darker Navy for shadows/depth */
+  --color-primary-light: #0f3073;    /* Hover Navy */
+  --color-primary-text: #F8F0E5;     /* Warm Cream / Ivory text on navy */
+  --color-warm-bg: #F8F0E5;          /* Warm Ivory Canvas */
+  --color-warm-surface: #FFF9F0;     /* Light Cream Surface */
+  --color-warm-card: #FFFFFF;        /* Crisp Card Base */
+  --color-dark-text: #241C16;        /* Deep Espresso text */
+  --color-muted-text: #615349;       /* Earthy Charcoal Muted */
+  --color-soft-gold: #C9A45C;        /* Soft Antique Gold */
+  --color-gold-hover: #b38e48;       /* Deeper Gold */
+  --color-gold-tint: rgba(201, 164, 92, 0.12);
+  --color-gold-border: rgba(201, 164, 92, 0.35);
+
+  /* Spice Accents */
+  --color-turmeric: #E89D1C;         /* Vibrant Turmeric Yellow */
+  --color-chilli: #B52B1E;           /* Kashmiri / Guntur Chilli Red */
+  --color-terracotta: #BD5A38;       /* Warm Terracotta Earth */
+  --color-sage: #3E6347;             /* Cardamom / Herbal Green */
+  --color-pepper: #1C1917;           /* Tellicherry Peppercorn Black */
+
+  /* Typography */
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Shadows & Elevations */
+  --shadow-sm: 0 2px 8px rgba(36, 28, 22, 0.05);
+  --shadow-md: 0 8px 24px rgba(36, 28, 22, 0.08);
+  --shadow-lg: 0 16px 40px rgba(8, 32, 82, 0.12);
+  --shadow-gold: 0 6px 20px rgba(201, 164, 92, 0.25);
+
+  /* Layout */
+  --container-max: 1240px;
+  --nav-height: 84px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. BASE & RESET
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-warm-bg);
+  color: var(--color-dark-text);
+  line-height: 1.65;
+  overflow-x: hidden;
+  background-image: radial-gradient(rgba(201, 164, 92, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   3. TYPOGRAPHY & DECORATIVE MOTIFS
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, .serif-font {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.25;
+  color: inherit;
+}
+
+.eyebrow {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-soft-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 12px 0 20px;
+}
+
+.gold-divider .line {
+  height: 1px;
+  width: 50px;
+  background: linear-gradient(90deg, transparent, var(--color-soft-gold));
+}
+
+.gold-divider .line.right {
+  background: linear-gradient(90deg, var(--color-soft-gold), transparent);
+}
+
+.gold-divider .motif {
+  color: var(--color-soft-gold);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
+/* Section Header Style */
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 52px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.section-header p {
+  color: var(--color-muted-text);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   4. BUTTONS & UI CONTROLS
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 28px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(8, 32, 82, 0.08);
+}
+
+/* Primary Navy Button (similar to reference's 'Find a Retailer') */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(8, 32, 82, 0.25);
+  color: #FFFFFF;
+}
+
+/* Gold Button */
+.btn-gold {
+  background: linear-gradient(135deg, #d8b26a, var(--color-soft-gold));
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-soft-gold);
+  font-weight: 700;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #e4c483, #d8b26a);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Ghost / Outline on Navy */
+.btn-outline-light {
+  background-color: transparent;
+  color: var(--color-primary-text);
+  border: 1px solid rgba(248, 240, 229, 0.4);
+}
+
+.btn-outline-light:hover {
+  border-color: var(--color-soft-gold);
+  color: var(--color-soft-gold);
+  background-color: rgba(201, 164, 92, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Outline on Ivory */
+.btn-outline-dark {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   5. TOP ANNOUNCEMENT & STICKY NAVBAR
+   -------------------------------------------------------------------------- */
+.top-bar {
+  background-color: var(--color-primary-dark);
+  color: var(--color-primary-text);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+  text-align: center;
+}
+
+.top-bar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar-notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+}
+
+.top-bar-notice span.dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-soft-gold);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-warm-bg);
+  border-bottom: 1px solid rgba(201, 164, 92, 0.28);
+  box-shadow: 0 4px 20px rgba(36, 28, 22, 0.04);
+  transition: var(--transition);
+}
+
+.sticky-header.scrolled {
+  background-color: rgba(248, 240, 229, 0.96);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 24px rgba(36, 28, 22, 0.08);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  position: relative;
+}
+
+/* Left & Right Nav Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-dark-text);
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-soft-gold);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-primary);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+/* Centered Heritage Brand Logo Seal (Inspired by the Daisy Flour emblem) */
+.brand-seal-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -30%);
+  z-index: 1010;
+  text-align: center;
+}
+
+.brand-seal {
+  width: 108px;
+  height: 108px;
+  background: radial-gradient(circle at center, #ffffff 0%, var(--color-warm-surface) 80%);
+  border-radius: 50%;
+  border: 3px solid var(--color-primary);
+  box-shadow: 0 6px 20px rgba(8, 32, 82, 0.2), inset 0 0 0 2px var(--color-soft-gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-seal:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 10px 28px rgba(8, 32, 82, 0.25), 0 0 0 4px var(--color-gold-tint);
+}
+
+.brand-seal svg.seal-art {
+  width: 44px;
+  height: 44px;
+  color: var(--color-primary);
+}
+
+.brand-seal .brand-title {
+  font-family: var(--font-serif);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+.brand-seal .brand-sub {
+  font-size: 0.52rem;
+  letter-spacing: 0.16em;
+  color: var(--color-soft-gold);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Nav Actions (CTA Button) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  color: var(--color-primary);
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Mobile Nav Drawer */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-warm-bg);
+  z-index: 2000;
+  padding: 32px 24px;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(-100%);
+  transition: transform 0.35s ease;
+  overflow-y: auto;
+}
+
+.mobile-nav.open {
+  transform: translateX(0);
+}
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-gold-border);
+  padding-bottom: 20px;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   6. HERO SECTION (EDITORIAL PHOTOGRAPHY & NAVY BANNER)
+   Strictly following the composition of the reference image:
+   Navy backdrop band, left craft sack spilling spice powder,
+   right ceramic/brass bowl with freshly prepared spices,
+   and centered monumental typography with gold divider line.
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  overflow: hidden;
+  padding: 60px 0 70px;
+  border-bottom: 4px solid var(--color-soft-gold);
+}
+
+/* Editorial Hero Canvas */
+.hero-editorial-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  min-height: 520px;
+}
+
+/* Left Image (Craft Sack spilling spices) */
+.hero-left-art {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+}
+
+.hero-sack-frame {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(201, 164, 92, 0.3);
+  transform: rotate(-2deg);
+  transition: transform 0.5s ease;
+}
+
+.hero-sack-frame:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.hero-sack-frame img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-sack-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(5, 20, 51, 0.95), transparent);
+  padding: 16px;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--color-soft-gold);
+  text-transform: uppercase;
+}
+
+/* Center Hero Typography */
+.hero-center-content {
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  padding: 0 16px;
+}
+
+.hero-eyebrow {
+  color: var(--color-soft-gold);
+  font-size: 0.92rem;
+  letter-spacing: 0.24em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.hero-heading {
+  font-size: 3.4rem;
+  font-weight: 600;
+  color: var(--color-primary-text);
+  line-height: 1.15;
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtext {
+  font-size: 1.12rem;
+  color: rgba(248, 240, 229, 0.88);
+  max-width: 520px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Right Image (Brass Bowl & Stone Grinding Mortar) */
+.hero-right-art {
+  position: relative;
+  z-index: 2;
+  text-align: right;
+}
+
+.hero-bowl-frame {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(201, 164, 92, 0.3);
+  transform: rotate(2deg);
+  transition: transform 0.5s ease;
+}
+
+.hero-bowl-frame:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.hero-bowl-frame img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-bowl-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(5, 20, 51, 0.95), transparent);
+  padding: 16px;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--color-soft-gold);
+  text-transform: uppercase;
+}
+
+/* Micro Trust Band under Hero */
+.hero-trust-bar {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(201, 164, 92, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: rgba(248, 240, 229, 0.75);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-trust-item svg {
+  color: var(--color-soft-gold);
+  width: 18px;
+  height: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   7. BRAND INTRODUCTION SECTION (TWO-COLUMN WITH WOODEN TABLETOP BASELINE)
+   Inspired directly by the reference's second content area:
+   Left: Editorial product packages on wood table
+   Right: Editorial copy & story CTA
+   -------------------------------------------------------------------------- */
+.brand-intro-section {
+  padding: 96px 0 80px;
+  background-color: var(--color-warm-bg);
+  position: relative;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Left Editorial Composition: Twin Heritage Pouches on Wood */
+.intro-visual-side {
+  position: relative;
+}
+
+.intro-table-stage {
+  position: relative;
+  background: radial-gradient(ellipse at 50% 60%, rgba(201, 164, 92, 0.15) 0%, transparent 70%);
+  padding: 30px 20px 0;
+  border-radius: 12px;
+}
+
+.intro-image-container {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 24px 50px rgba(36, 28, 22, 0.16);
+  border: 1px solid rgba(201, 164, 92, 0.35);
+}
+
+.intro-image-container img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.intro-image-container:hover img {
+  transform: scale(1.03);
+}
+
+/* Wooden Tabletop Surface Baseline */
+.wooden-shelf-bar {
+  height: 24px;
+  background: linear-gradient(180deg, #b8864d 0%, #8b5a2b 40%, #5c3814 100%);
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 10px 20px rgba(36, 28, 22, 0.2);
+  position: relative;
+  border-top: 1px solid #d4a36e;
+}
+
+/* Floating Heritage Badge */
+.intro-floating-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--color-primary);
+  color: var(--color-primary-text);
+  padding: 12px 18px;
+  border-radius: 4px;
+  border: 1px solid var(--color-soft-gold);
+  box-shadow: 0 8px 24px rgba(8, 32, 82, 0.3);
+  text-align: center;
+}
+
+.intro-floating-badge .year {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-soft-gold);
+  line-height: 1;
+}
+
+.intro-floating-badge .label {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Right Content Area */
+.intro-content-side {
+  padding-left: 10px;
+}
+
+.intro-content-side h2 {
+  font-size: 2.8rem;
+  color: var(--color-primary);
+  line-height: 1.18;
+  margin: 12px 0 20px;
+}
+
+.intro-lead-text {
+  font-size: 1.15rem;
+  color: var(--color-dark-text);
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.intro-body-text {
+  color: var(--color-muted-text);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.intro-feature-list {
+  list-style: none;
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.intro-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.intro-feature-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-gold-tint);
+  border: 1px solid var(--color-soft-gold);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.intro-feature-item p strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.intro-feature-item p {
+  font-size: 0.94rem;
+  color: var(--color-muted-text);
+}
+
+/* --------------------------------------------------------------------------
+   8. SPICE COLLECTION SECTION
+   Inspired by the reference's 'Quality Organic Flours' category rows
+   Tabular elegance: Category name, origin, aroma profile, quick actions
+   -------------------------------------------------------------------------- */
+.spice-collection-section {
+  padding: 80px 0 100px;
+  background-color: var(--color-warm-surface);
+  border-top: 1px solid rgba(201, 164, 92, 0.2);
+  border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+}
+
+/* Filter Nav Tabs */
+.collection-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.collection-tab-btn {
+  background-color: transparent;
+  color: var(--color-dark-text);
+  border: 1px solid var(--color-gold-border);
+  padding: 9px 22px;
+  border-radius: 30px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.collection-tab-btn:hover,
+.collection-tab-btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(8, 32, 82, 0.15);
+}
+
+/* Spice Rows Layout (Reflective of reference's stacked flour selector) */
+.spice-rows-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.spice-row-card {
+  background: var(--color-warm-card);
+  border: 1px solid rgba(201, 164, 92, 0.28);
+  border-radius: 6px;
+  padding: 16px 24px;
+  display: grid;
+  grid-template-columns: 80px 1.5fr 2fr 140px;
+  align-items: center;
+  gap: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.spice-row-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-soft-gold);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.spice-row-card:hover {
+  transform: translateX(4px);
+  border-color: var(--color-soft-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.spice-row-card:hover::before {
+  opacity: 1;
+}
+
+/* Small Product Image */
+.spice-row-thumb {
+  width: 76px;
+  height: 76px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 164, 92, 0.3);
+  position: relative;
+}
+
+.spice-row-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.spice-row-card:hover .spice-row-thumb img {
+  transform: scale(1.1);
+}
+
+/* Name & Origin */
+.spice-row-name-group h3 {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.spice-origin-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-soft-gold);
+  text-transform: uppercase;
+}
+
+/* Description & Notes */
+.spice-row-desc {
+  font-size: 0.92rem;
+  color: var(--color-muted-text);
+  line-height: 1.55;
+}
+
+.spice-aroma-chips {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.aroma-chip {
+  font-size: 0.7rem;
+  background: var(--color-warm-bg);
+  color: var(--color-dark-text);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(201, 164, 92, 0.25);
+}
+
+/* Action Icons (Magnifying Glass & Bag / Custom Grind inquiry) */
+.spice-row-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.icon-action-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  border: 1px solid var(--color-gold-border);
+  background-color: var(--color-warm-bg);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.icon-action-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  border-color: var(--color-primary);
+  transform: scale(1.08);
+}
+
+.icon-action-btn.primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  border-color: var(--color-primary);
+}
+
+.icon-action-btn.primary:hover {
+  background-color: var(--color-soft-gold);
+  color: var(--color-primary-dark);
+  border-color: var(--color-soft-gold);
+}
+
+/* --------------------------------------------------------------------------
+   9. CUSTOM GRINDING SERVICE SECTION (YOUR SPICE. OUR CRAFT)
+   -------------------------------------------------------------------------- */
+.grinding-service-section {
+  padding: 100px 0;
+  background: radial-gradient(circle at 10% 20%, rgba(201, 164, 92, 0.08) 0%, transparent 60%),
+              var(--color-warm-bg);
+  position: relative;
+}
+
+.grind-step-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 56px;
+}
+
+.grind-step-card {
+  background: var(--color-warm-card);
+  border: 1px solid rgba(201, 164, 92, 0.35);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.grind-step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-soft-gold);
+}
+
+.grind-step-media {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.grind-step-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.grind-step-card:hover .grind-step-media img {
+  transform: scale(1.08);
+}
+
+.grind-step-number {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--color-primary);
+  color: var(--color-soft-gold);
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 3px;
+  border: 1px solid var(--color-soft-gold);
+}
+
+.grind-step-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.grind-step-content h3 {
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.grind-step-content p {
+  color: var(--color-muted-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Interactive Texture Selector Demo inside Grinding */
+.grind-texture-tester {
+  background: var(--color-warm-surface);
+  border: 1px solid var(--color-gold-border);
+  border-radius: 8px;
+  padding: 28px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.texture-tester-info h4 {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.texture-tester-info p {
+  font-size: 0.92rem;
+  color: var(--color-muted-text);
+}
+
+.texture-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.texture-btn {
+  background: var(--color-warm-card);
+  border: 1px solid var(--color-gold-border);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-dark-text);
+  transition: var(--transition);
+}
+
+.texture-btn.active, .texture-btn:hover {
+  background: var(--color-primary);
+  color: var(--color-primary-text);
+  border-color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   10. CUSTOM BLENDS FEATURE BANNER
+   -------------------------------------------------------------------------- */
+.custom-blend-banner {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 60%, #0d2d70 100%);
+  color: var(--color-primary-text);
+  padding: 88px 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 3px solid var(--color-soft-gold);
+  border-bottom: 3px solid var(--color-soft-gold);
+}
+
+.blend-banner-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.blend-banner-text h2 {
+  font-size: 3rem;
+  color: var(--color-primary-text);
+  line-height: 1.18;
+  margin-bottom: 16px;
+}
+
+.blend-banner-text p {
+  font-size: 1.1rem;
+  color: rgba(248, 240, 229, 0.85);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.blend-palette-preview {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.spice-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(201, 164, 92, 0.35);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  color: var(--color-primary-text);
+}
+
+.spice-tag-pill span.color-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.blend-banner-visual {
+  position: relative;
+}
+
+.blend-banner-frame {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--color-soft-gold);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.blend-banner-frame img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+.blend-overlay-tag {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(8, 32, 82, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-soft-gold);
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  color: var(--color-soft-gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   11. BULK ORDERS SECTION (SPICES IN EVERY SCALE)
+   -------------------------------------------------------------------------- */
+.bulk-orders-section {
+  padding: 100px 0;
+  background-color: var(--color-warm-bg);
+}
+
+.bulk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.bulk-card {
+  background: var(--color-warm-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: 6px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+}
+
+.bulk-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.bulk-icon-wrap {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: var(--color-gold-tint);
+  border: 1px solid var(--color-soft-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.bulk-icon-wrap svg {
+  width: 32px;
+  height: 32px;
+}
+
+.bulk-card h3 {
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.bulk-card p {
+  color: var(--color-muted-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.bulk-card .spec-pill {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-soft-gold);
+  background: var(--color-warm-bg);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(201, 164, 92, 0.3);
+  display: inline-block;
+}
+
+.bulk-cta-footer {
+  text-align: center;
+  margin-top: 48px;
+}
+
+/* --------------------------------------------------------------------------
+   12. WHY CHOOSE US SECTION
+   -------------------------------------------------------------------------- */
+.why-us-section {
+  padding: 80px 0;
+  background-color: var(--color-warm-surface);
+  border-top: 1px solid rgba(201, 164, 92, 0.2);
+  border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.why-us-item {
+  padding: 24px;
+  text-align: center;
+  border-right: 1px solid rgba(201, 164, 92, 0.2);
+}
+
+.why-us-item:last-child {
+  border-right: none;
+}
+
+.why-us-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  color: var(--color-soft-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-us-icon svg {
+  width: 38px;
+  height: 38px;
+}
+
+.why-us-item h3 {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.why-us-item p {
+  font-size: 0.88rem;
+  color: var(--color-muted-text);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   13. FINAL CTA / OVERHEAD SPICE BANNER
+   -------------------------------------------------------------------------- */
+.final-cta-section {
+  position: relative;
+  background-color: var(--color-primary-dark);
+  color: var(--color-primary-text);
+  padding: 110px 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.final-cta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+  filter: saturate(1.2);
+}
+
+.final-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.final-cta-content h2 {
+  font-size: 3.2rem;
+  color: var(--color-primary-text);
+  line-height: 1.18;
+  margin-bottom: 16px;
+}
+
+.final-cta-content p {
+  font-size: 1.15rem;
+  color: rgba(248, 240, 229, 0.88);
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+
+.final-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   14. FOOTER & TRADITIONAL ORNAMENTAL BORDER
+   -------------------------------------------------------------------------- */
+.footer-frieze {
+  height: 12px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-soft-gold),
+    var(--color-soft-gold) 10px,
+    var(--color-primary-dark) 10px,
+    var(--color-primary-dark) 20px
+  );
+  border-top: 1px solid var(--color-soft-gold);
+}
+
+.site-footer {
+  background-color: var(--color-primary-dark);
+  color: var(--color-primary-text);
+  padding: 80px 0 30px;
+  border-top: 1px solid rgba(201, 164, 92, 0.3);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-brand .brand-footer-seal {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.footer-seal-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-soft-gold);
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-soft-gold);
+}
+
+.brand-footer-seal h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--color-primary-text);
+}
+
+.brand-footer-seal span {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: var(--color-soft-gold);
+  text-transform: uppercase;
+  display: block;
+}
+
+.footer-brand p {
+  font-size: 0.92rem;
+  color: rgba(248, 240, 229, 0.7);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  border: 1px solid rgba(201, 164, 92, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-primary-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.social-icon-btn:hover {
+  background: var(--color-soft-gold);
+  color: var(--color-primary-dark);
+  border-color: var(--color-soft-gold);
+}
+
+.footer-col h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-soft-gold);
+  margin-bottom: 22px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--color-soft-gold);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: rgba(248, 240, 229, 0.75);
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--color-soft-gold);
+  padding-left: 4px;
+}
+
+.footer-contact-info {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 0.9rem;
+  color: rgba(248, 240, 229, 0.75);
+}
+
+.footer-contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.footer-contact-info svg {
+  color: var(--color-soft-gold);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid rgba(201, 164, 92, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: rgba(248, 240, 229, 0.55);
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   15. INTERACTIVE MODALS (QUICK VIEW & CUSTOM BLEND REQUEST)
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 20, 51, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-window {
+  background: var(--color-warm-bg);
+  border: 1.5px solid var(--color-soft-gold);
+  border-radius: 8px;
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-backdrop.active .modal-window {
+  transform: translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--color-warm-surface);
+  border: 1px solid var(--color-gold-border);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--color-primary);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+}
+
+.modal-close-btn:hover {
+  background: var(--color-primary);
+  color: var(--color-primary-text);
+}
+
+.modal-header-hero {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.modal-header-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-header-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, var(--color-warm-bg), rgba(8, 32, 82, 0.4));
+}
+
+.modal-body-padding {
+  padding: 28px 32px 36px;
+}
+
+.modal-body-padding h3 {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.modal-form-group {
+  margin-bottom: 18px;
+}
+
+.modal-form-group label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.modal-form-group input,
+.modal-form-group select,
+.modal-form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-gold-border);
+  border-radius: 4px;
+  background: #FFFFFF;
+  color: var(--color-dark-text);
+  font-size: 0.92rem;
+  transition: border-color 0.2s ease;
+}
+
+.modal-form-group input:focus,
+.modal-form-group select:focus,
+.modal-form-group textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(8, 32, 82, 0.1);
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-dark-text);
+  cursor: pointer;
+}
+
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--color-primary);
+  color: var(--color-primary-text);
+  border: 1px solid var(--color-soft-gold);
+  padding: 14px 24px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 4000;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.toast-notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   16. RESPONSIVE DESIGN (DESKTOP, TABLET, MOBILE)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-editorial-wrap {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 36px;
+  }
+
+  .hero-left-art, .hero-right-art {
+    display: none; /* In tablet/compact, keep focal on center hero & background */
+  }
+
+  .hero-center-content {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .spice-row-card {
+    grid-template-columns: 70px 1.5fr 1fr;
+    gap: 16px;
+  }
+
+  .spice-row-desc {
+    display: none; /* Keep clean on tablet */
+  }
+
+  .blend-banner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bulk-grid, .why-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-us-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Adjust centered logo badge */
+  .brand-seal-wrapper {
+    position: static;
+    transform: none;
+  }
+
+  .brand-seal {
+    width: 80px;
+    height: 80px;
+  }
+
+  .navbar {
+    height: auto;
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu, .nav-actions .btn {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .hero-heading {
+    font-size: 2.4rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .grind-step-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bulk-grid, .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .spice-row-card {
+    grid-template-columns: 60px 1fr auto;
+    padding: 12px 16px;
+  }
+
+  .hero-trust-bar {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

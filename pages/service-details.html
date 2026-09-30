@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Detail | Amritha Spice Mill</title>
+  <meta name="description" content="Full service brief from Amritha Spice Mill: process, technical specifications, indicative pricing and FAQs for each mill service.">
+  <meta name="theme-color" content="#082052">
+
+  <script src="../src/js/theme.js"></script>
+  <script src="../src/js/rtl-toggle.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../src/js/tailwind-config.js"></script>
+
+  <link rel="stylesheet" href="../src/css/style.css">
+  <link rel="stylesheet" href="../src/css/pages.css">
+</head>
+<body data-base="../" data-page="service-details">
+
+  <div id="site-navbar"></div>
+
+  <main id="main-content">
+
+    <!-- 1. SERVICE HERO (populated from ?id=…) -->
+    <section class="page-hero" id="service-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="crumb-sep" aria-hidden="true">/</span>
+          <a href="services.html">Services</a>
+          <span class="crumb-sep" aria-hidden="true">/</span>
+          <span class="crumb-current" id="crumb-current" aria-current="page">Loading…</span>
+        </nav>
+
+        <div class="grid grid-2" style="align-items:center;gap:48px;">
+          <div>
+            <span class="eyebrow" id="service-category">Service brief</span>
+            <h1 id="service-title">Service Detail</h1>
+            <p id="service-tagline">Loading the full brief…</p>
+
+            <div class="tag-row" id="service-tags" style="margin-top:22px;"></div>
+
+            <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;">
+              <a href="#service-enquiry" class="btn btn-gold">Request this service</a>
+              <a href="services.html" class="btn btn-outline-light">Back to catalogue</a>
+            </div>
+          </div>
+
+          <div style="position:relative;">
+            <img id="service-image" class="split-media" src="" alt="" style="width:100%;height:380px;object-fit:cover;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. QUICK FACTS -->
+    <section class="page-section-sm section-alt" aria-label="Service quick facts">
+      <div class="container">
+        <div class="stat-strip" id="service-facts">
+          <div class="stat-cell">
+            <div class="stat-value" id="fact-turnaround" style="font-size:1.7rem;">—</div>
+            <div class="stat-label">Turnaround</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-value" id="fact-minorder" style="font-size:1.7rem;">—</div>
+            <div class="stat-label">Minimum order</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-value" id="fact-rating" style="font-size:1.7rem;">—</div>
+            <div class="stat-label">Client rating</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-value" style="font-size:1.7rem;" id="fact-price">—</div>
+            <div class="stat-label">Entry price</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. OVERVIEW + HIGHLIGHTS -->
+    <section class="page-section" aria-labelledby="overview-heading">
+      <div class="container">
+        <div class="grid grid-sidebar-right" style="align-items:start;">
+          <div>
+            <span class="eyebrow">WHAT IT ACTUALLY INVOLVES</span>
+            <h2 id="overview-heading" style="margin:10px 0 22px;">Overview</h2>
+            <div class="prose" id="service-overview"></div>
+          </div>
+
+          <aside class="sidebar">
+            <div class="widget">
+              <h4>Why clients choose it</h4>
+              <ul class="col-check" id="service-highlights" style="gap:16px;"></ul>
+            </div>
+            <div class="widget widget-dark">
+              <h4>Not sure this is the right line?</h4>
+              <p>Most enquiries that start with one service end with two. Talk to us before you commit.</p>
+              <a href="contact.html" class="btn btn-gold btn-sm btn-block">Ask the trade desk</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FEATURES -->
+    <section class="page-section-sm section-navy" aria-labelledby="features-heading">
+      <div class="container">
+        <div class="section-header" style="margin-bottom:34px;">
+          <span class="eyebrow">INCLUDED AS STANDARD</span>
+          <h2 id="features-heading" style="color:var(--color-primary-text);">What&rsquo;s Included</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+        <div class="grid grid-3" id="service-features"></div>
+      </div>
+    </section>
+
+    <!-- 5. PROCESS -->
+    <section class="page-section" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">STEP BY STEP</span>
+          <h2 id="process-heading">The Process</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+        <div class="process-grid" id="service-process"></div>
+      </div>
+    </section>
+
+    <!-- 6. SPECIFICATIONS -->
+    <section class="page-section-sm section-alt" aria-labelledby="specs-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">THE DETAIL SHEET</span>
+          <h2 id="specs-heading">Technical Specifications</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="service-specs">
+            <caption>Figures are typical production values. Batch cards carry the measured value for your specific order.</caption>
+            <thead>
+              <tr><th scope="col">Parameter</th><th scope="col">Specification</th></tr>
+            </thead>
+            <tbody><tr><td><strong>Loading…</strong></td><td>Reading specifications…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. PRICING -->
+    <section class="page-section" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">INDICATIVE TIERS</span>
+          <h2 id="pricing-heading">Pricing for This Service</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+          <p>All tiers are starting points. Raw material, granule profile and packaging move the final figure, and we will always tell you which of the three moved it.</p>
+        </div>
+
+        <div class="plan-grid" id="service-pricing"></div>
+
+        <div class="guarantee" style="margin-top:38px;">
+          <div class="icon-wrap" id="guarantee-icon" aria-hidden="true"></div>
+          <div>
+            <h3>No hidden charges, ever</h3>
+            <p>Storage is free for the first 30 days after dispatch. If a batch is not right, tell us within 14 days and we will re-mill it at no charge — the issue is almost always granule size, and that is on us to get right.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FAQS -->
+    <section class="page-section section-alt" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="faq-layout">
+          <aside class="faq-side">
+            <h3>Questions on this service</h3>
+            <p style="font-size:.9rem;color:var(--color-muted-text);line-height:1.7;margin-bottom:18px;">If yours is not here, the Help Centre has a longer list and the trade desk answers the phone.</p>
+            <a href="FAQ.html" class="btn btn-outline-dark btn-sm btn-block">Open the Help Centre</a>
+          </aside>
+          <div>
+            <div class="accordion" data-accordion="single" data-open-first="1" id="service-faqs"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. ENQUIRY FORM -->
+    <section class="page-section" id="service-enquiry" aria-labelledby="enquiry-heading">
+      <div class="container">
+        <div class="grid grid-sidebar-right" style="align-items:start;">
+          <div class="form-card">
+            <span class="eyebrow">START THE CONVERSATION</span>
+            <h3 id="enquiry-heading" style="margin-top:8px;">Request <span id="enquiry-service-name">This Service</span></h3>
+            <p class="form-intro">No obligation and no minimum commitment at this stage. We reply within one working day with a realistic quote and timeline.</p>
+
+            <form id="service-enquiry-form" data-validate novalidate
+                  data-success-title="Request received"
+                  data-success-message="Thank you. A Master Miller will read this personally and reply within one working day with a proposed plan, price and date."
+                  data-success-toast="Request received — we will reply within one working day.">
+
+              <input type="hidden" id="enquiry-service-id" name="serviceId" value="">
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="sd-name">Name <span class="req">*</span></label>
+                  <input id="sd-name" name="name" type="text" required minlength="2" autocomplete="name" placeholder="Vikram Rao">
+                  <div class="form-error" data-error-for="sd-name">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>Please tell us your name.</span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="sd-email">Email <span class="req">*</span></label>
+                  <input id="sd-email" name="email" type="email" required autocomplete="email" placeholder="vikram@kitchen.com">
+                  <div class="form-error" data-error-for="sd-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>Enter a valid email address.</span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="sd-phone">Phone / WhatsApp <span class="req">*</span></label>
+                  <input id="sd-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+91 98765 43210">
+                  <div class="form-error" data-error-for="sd-phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>Enter a valid phone number.</span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="sd-volume">Volume needed</label>
+                  <select id="sd-volume" name="volume">
+                    <option value="unsure">Not sure yet</option>
+                    <option value="under-1">Under 1 kg</option>
+                    <option value="1-5">1 – 5 kg</option>
+                    <option value="5-50">5 – 50 kg</option>
+                    <option value="50-500">50 – 500 kg</option>
+                    <option value="500+">500 kg+</option>
+                  </select>
+                </div>
+                <div class="field span-2">
+                  <label for="sd-brief">Tell us about the job <span class="req">*</span></label>
+                  <textarea id="sd-brief" name="brief" rows="5" required minlength="20" maxlength="1200"
+                            placeholder="Spice or product, quantity, granule preference, packaging, and your deadline."></textarea>
+                  <div class="form-error" data-error-for="sd-brief">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>Please describe the job — at least 20 characters.</span>
+                  </div>
+                </div>
+                <div class="field span-2">
+                  <label class="checkbox-row" for="sd-consent">
+                    <input type="checkbox" id="sd-consent" name="consent" required>
+                    <span>I agree to be contacted about this request and have read the <a href="Privacy-policy.html">privacy policy</a>. <span class="req">*</span></span>
+                  </label>
+                  <div class="form-error" data-error-for="sd-consent">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>We need your consent to reply.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Send request</button>
+                <span style="font-size:.82rem;color:var(--color-muted-text);">Reply within one working day.</span>
+              </div>
+            </form>
+          </div>
+
+          <aside class="sidebar">
+            <div class="widget">
+              <h4>Other services</h4>
+              <ul class="plain" id="related-services"></ul>
+            </div>
+            <div class="widget">
+              <h4>Prefer to talk?</h4>
+              <p style="font-size:.9rem;color:var(--color-muted-text);line-height:1.65;margin-bottom:14px;">The trade desk is open Monday to Saturday, 8am – 8pm IST.</p>
+              <a href="tel:+919840123456" class="btn btn-outline-dark btn-sm btn-block">+91 98401 23456</a>
+              <a href="contact.html" class="btn btn-primary btn-sm btn-block" style="margin-top:10px;">Book a mill visit</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../src/js/data/images.js"></script>
+  <script src="../src/js/data/icons.js"></script>
+  <script src="../src/js/data/services.js"></script>
+
+  <script src="../src/js/toast.js"></script>
+  <script src="../src/js/navbar.js"></script>
+  <script src="../src/js/footer.js"></script>
+  <script src="../src/js/ui.js"></script>
+  <script src="../src/js/form-validation.js"></script>
+  <script src="../src/js/pages/kit.js"></script>
+  <script src="../src/js/pages/service-details.js"></script>
+
+</body>
+</html>

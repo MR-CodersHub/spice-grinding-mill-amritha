@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply for Trade Access | Amritha Spice Mill</title>
+  <meta name="description" content="Apply for a trade account at the Amritha Spice Mill — cold stone milling, masala blending, bulk supply and private label for registered kitchens, hotels and distributors.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#082052">
+
+  <script src="../src/js/theme.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../src/js/tailwind-config.js"></script>
+
+  <link rel="stylesheet" href="../src/css/style.css">
+  <link rel="stylesheet" href="../src/css/pages.css">
+</head>
+<body data-base="../" data-page="signup">
+
+  <div class="auth-shell">
+
+    <!-- LEFT: THE PITCH -->
+    <aside class="auth-aside">
+      <a class="auth-brand" href="../index.html" style="display:flex;align-items:center;gap:12px;margin-bottom:34px;">
+        <span data-mark-icon="award" aria-hidden="true" style="display:flex;color:var(--color-soft-gold);"></span>
+        <span style="color:var(--color-primary-text);font-family:var(--font-display);font-size:1.16rem;font-weight:700;line-height:1.15;">Amritha<br>Spice Mill</span>
+      </a>
+
+      <span class="eyebrow" style="color:var(--color-soft-gold);">TRADE ACCESS</span>
+      <h2>One Application, and a Person Reads It</h2>
+      <p>There is no automated approval queue. Your application goes to the four people at the trade desk, they call you, and you are on the register by the end of the week — or they tell you honestly that your volume does not suit us yet.</p>
+
+      <ul class="auth-points">
+        <li><span data-aside-icon="checkCircle" aria-hidden="true"></span><span>First three orders on cash. Thirty-day terms once we know each other.</span></li>
+        <li><span data-aside-icon="gift" aria-hidden="true"></span><span>The four-profile sample box is free with any trade enquiry, including the shipping.</span></li>
+        <li><span data-aside-icon="users" aria-hidden="true"></span><span>Private-label and consultancy work is quoted the same day once we have volumes.</span></li>
+        <li><span data-aside-icon="shield" aria-hidden="true"></span><span>Your blend recipes stay yours. We will put that in writing.</span></li>
+      </ul>
+
+      <p style="margin-top:34px;font-size:.82rem;opacity:.75;">
+        Prefer to talk first? Call +91 98401 23456, Monday to Saturday, 8am – 8pm IST.
+      </p>
+    </aside>
+
+    <!-- RIGHT: THE APPLICATION -->
+    <main class="auth-main" id="main-content">
+      <div class="auth-card">
+
+        <a class="auth-brand" href="../index.html" style="gap:10px;">
+          <span data-mark-icon="award" aria-hidden="true" style="display:flex;align-items:center;color:var(--color-soft-gold);"></span>
+          <span style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--color-primary);font-weight:700;">Amritha Spice Mill</span>
+        </a>
+
+        <h1>Apply for Trade Access</h1>
+        <p class="auth-sub">Seven short fields. A GST number helps, but a small kitchen starting at 250 g a week is a legitimate account here.</p>
+
+        <div class="note info" id="auth-note" hidden style="margin-bottom:20px;"></div>
+
+        <form id="signup-form" data-validate novalidate
+              data-success-title="Application received"
+              data-success-message="This is a static build, so nothing was transmitted and no account exists. On the live site the trade desk reads this within one working day and calls you before anything is quoted."
+              data-success-toast="Application received — the trade desk will call.">
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="sg-name">Your name <span class="req">*</span></label>
+              <input id="sg-name" name="name" type="text" required minlength="2" autocomplete="name" placeholder="Vikram Rao">
+            </div>
+            <div class="field">
+              <label for="sg-business">Business name <span class="req">*</span></label>
+              <input id="sg-business" name="business" type="text" required minlength="2" autocomplete="organization" placeholder="Rao Chettinad Kitchen">
+            </div>
+            <div class="field">
+              <label for="sg-email">Trade email <span class="req">*</span></label>
+              <input id="sg-email" name="email" type="email" required autocomplete="email" placeholder="you@kitchen.com">
+            </div>
+            <div class="field">
+              <label for="sg-phone">Phone <span class="req">*</span></label>
+              <input id="sg-phone" name="phone" type="tel" required pattern="[0-9+()\s-]{8,18}" autocomplete="tel" placeholder="+91 98401 23456">
+              <p class="hint">We call rather than text. It is faster and we can hear the kitchen.</p>
+            </div>
+            <div class="field">
+              <label for="sg-gst">GST or trade registration</label>
+              <input id="sg-gst" name="gst" type="text" placeholder="Optional at this stage">
+            </div>
+            <div class="field">
+              <label for="sg-volume">Monthly volume</label>
+              <select id="sg-volume" name="volume">
+                <option value="unsure">Not sure yet</option>
+                <option value="under-5">Under 5 kg</option>
+                <option value="5-50" selected>5 – 50 kg</option>
+                <option value="50-250">50 – 250 kg</option>
+                <option value="250+">250 kg and above</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label id="sg-service-label">What do you need from us? <span class="req">*</span></label>
+            <div class="chip-select" role="group" aria-labelledby="sg-service-label">
+              <span class="chip-select">
+                <input type="checkbox" id="sg-s1" name="services" value="stone-chakki-milling" data-required-group="services" required>
+                <label for="sg-s1"><span class="dot" aria-hidden="true"></span>Cold stone milling</label>
+              </span>
+              <span class="chip-select">
+                <input type="checkbox" id="sg-s2" name="services" value="custom-masala-blending" data-required-group="services" required>
+                <label for="sg-s2"><span class="dot" aria-hidden="true"></span>Masala blending</label>
+              </span>
+              <span class="chip-select">
+                <input type="checkbox" id="sg-s3" name="services" value="commercial-bulk-supply" data-required-group="services" required>
+                <label for="sg-s3"><span class="dot" aria-hidden="true"></span>Bulk supply</label>
+              </span>
+              <span class="chip-select">
+                <input type="checkbox" id="sg-s4" name="services" value="private-label-packaging" data-required-group="services" required>
+                <label for="sg-s4"><span class="dot" aria-hidden="true"></span>Private label</label>
+              </span>
+              <span class="chip-select">
+                <input type="checkbox" id="sg-s5" name="services" value="spice-consultancy" data-required-group="services" required>
+                <label for="sg-s5"><span class="dot" aria-hidden="true"></span>Consultancy</label>
+              </span>
+              <span class="chip-select">
+                <input type="checkbox" id="sg-s6" name="services" value="spice-kits-gifting" data-required-group="services" required>
+                <label for="sg-s6"><span class="dot" aria-hidden="true"></span>Gifting kits</label>
+              </span>
+              <span class="chip-select">
+                <input type="checkbox" id="sg-s7" name="services" value="amcham-kitchen-training" data-required-group="services" required>
+                <label for="sg-s7"><span class="dot" aria-hidden="true"></span>Kitchen training</label>
+              </span>
+              <span class="chip-select">
+                <input type="checkbox" id="sg-s8" name="services" value="herb-infusion-oils" data-required-group="services" required>
+                <label for="sg-s8"><span class="dot" aria-hidden="true"></span>Infusion oils</label>
+              </span>
+              <span class="chip-select">
+                <input type="checkbox" id="sg-s9" name="services" value="whole-spice-grading" data-required-group="services" required>
+                <label for="sg-s9"><span class="dot" aria-hidden="true"></span>Grading &amp; cleaning</label>
+              </span>
+            </div>
+            <p class="hint">Choose as many as apply.</p>
+          </div>
+
+          <div class="field">
+            <label for="sg-password">Choose a passphrase <span class="req">*</span></label>
+            <div class="pw-field">
+              <input id="sg-password" name="password" type="password" required minlength="8" autocomplete="new-password" placeholder="At least 8 characters" data-strength-for>
+              <button class="pw-toggle" type="button" data-pw-toggle="sg-password" aria-label="Show passphrase" aria-pressed="false"></button>
+            </div>
+            <div class="pw-meter" id="pw-meter" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <span class="pw-label" id="pw-label">Not measured yet.</span>
+          </div>
+
+          <div class="field">
+            <label for="sg-note">Anything we should know?</label>
+            <textarea id="sg-note" name="note" rows="3" placeholder="The dish you are trying to fix, the volume you need next month, the deadline you are working to."></textarea>
+          </div>
+
+          <label class="checkbox-row" for="sg-terms" style="margin-bottom:22px;">
+            <input id="sg-terms" name="terms" type="checkbox" required>
+            <span>I have read the <a href="../pages/Terms-of-service.html">terms of service</a> and the <a href="../pages/Privacy-policy.html">privacy policy</a>, and I understand this form sends nothing until the trade desk is connected.</span>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-block">Send application</button>
+          </div>
+
+          <div class="auth-links" style="margin-top:24px;">
+            <a href="login.html">Already registered? Sign in</a>
+            <span><a href="../pages/contact.html">Ask a question first</a></span>
+          </div>
+
+        </form>
+
+        <p style="margin-top:26px;padding-top:20px;border-top:1px solid var(--color-gold-border);font-size:.82rem;color:var(--color-muted-text);line-height:1.7;">
+          <a href="../index.html" style="color:var(--color-primary);font-weight:700;">Back to the home page</a>
+          &nbsp;·&nbsp;
+          <a href="../pages/services.html" style="color:var(--color-primary);font-weight:700;">Read the service catalogue first</a>
+        </p>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="../src/js/data/images.js"></script>
+  <script src="../src/js/data/icons.js"></script>
+
+  <script src="../src/js/toast.js"></script>
+  <script src="../src/js/form-validation.js"></script>
+  <script src="../src/js/pages/kit.js"></script>
+  <script src="../src/js/pages/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Visit | Amritha Spice Mill</title>
+  <meta name="description" content="Talk to the Amritha Spice Mill trade desk in Mattancherry, Kochi. Phone, email, visiting hours, directions to the mill, and a contact form that reaches a person.">
+  <meta name="theme-color" content="#082052">
+
+  <script src="../src/js/theme.js"></script>
+  <script src="../src/js/rtl-toggle.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../src/js/tailwind-config.js"></script>
+
+  <link rel="stylesheet" href="../src/css/style.css">
+  <link rel="stylesheet" href="../src/css/pages.css">
+</head>
+<body data-base="../" data-page="contact">
+
+  <div id="site-navbar"></div>
+
+  <main id="main-content">
+
+    <!-- 1. PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="crumb-sep" aria-hidden="true">/</span>
+          <span class="crumb-current" aria-current="page">Contact &amp; Visit</span>
+        </nav>
+        <span class="eyebrow">A PERSON ANSWERS, USUALLY WITHIN THE HOUR</span>
+        <h1>Talk to the Mill</h1>
+        <p>The trade desk is four people in one room above the packing floor. If you call during opening hours you will not be put on a menu-based phone system, and if you write, a Master Miller reads it.</p>
+      </div>
+    </section>
+
+    <!-- 2. CONTACT CARDS -->
+    <section class="page-section-tight" aria-label="Ways to reach us">
+      <div class="container">
+        <div class="grid grid-4" id="contact-cards">
+          <div class="contact-card reveal">
+            <div class="icon-wrap" data-contact-icon="phone" aria-hidden="true"></div>
+            <h3>Trade desk</h3>
+            <p>Orders, quotes, dispatch and anything about an existing batch card.</p>
+            <a href="tel:+919840123456">+91 98401 23456</a>
+          </div>
+
+          <div class="contact-card reveal">
+            <div class="icon-wrap" data-contact-icon="mail" aria-hidden="true"></div>
+            <h3>Email the mill</h3>
+            <p>Send a brief, a menu or a specification. Attach a spreadsheet if you have one.</p>
+            <a href="mailto:mill@amrithaspices.in">mill@amrithaspices.in</a>
+          </div>
+
+          <div class="contact-card reveal">
+            <div class="icon-wrap" data-contact-icon="whatsapp" aria-hidden="true"></div>
+            <h3>WhatsApp</h3>
+            <p>Photograph a label or a batch card and send it over. That is usually enough to start.</p>
+            <a href="https://wa.me/919840123456" target="_blank" rel="noopener noreferrer">Message the mill</a>
+          </div>
+
+          <div class="contact-card reveal">
+            <div class="icon-wrap" data-contact-icon="pin" aria-hidden="true"></div>
+            <h3>Visit in person</h3>
+            <p>Trade visits run Monday to Saturday. Come at 8am if you want to see the stones turning.</p>
+            <a href="#visit">Directions &amp; hours</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FORM + SIDEBAR -->
+    <section class="page-section" aria-labelledby="form-heading">
+      <div class="container">
+        <div class="grid grid-sidebar-right" style="align-items:start;">
+          <div class="form-card">
+            <span class="eyebrow">WRITE TO US</span>
+            <h3 id="form-heading" style="margin-top:8px;">Tell Us What You Need</h3>
+            <p class="form-intro" id="form-intro">The more specific you are, the more useful the reply. Volume, granule, packaging and deadline — that is enough to quote from.</p>
+
+            <form id="contact-form" data-validate novalidate
+                  data-success-title="Message received"
+                  data-success-message="Thank you. A Master Miller will read this personally and reply within one working day. If it is urgent, call the trade desk on +91 98401 23456."
+                  data-success-toast="Message received — we reply within one working day.">
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="c-name">Name <span class="req">*</span></label>
+                  <input id="c-name" name="name" type="text" required minlength="2" autocomplete="name" placeholder="Meera Iyer">
+                  <div class="form-error" data-error-for="c-name">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>Please tell us your name.</span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="c-email">Email <span class="req">*</span></label>
+                  <input id="c-email" name="email" type="email" required autocomplete="email" placeholder="meera@kitchen.com">
+                  <div class="form-error" data-error-for="c-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>Enter a valid email address.</span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="c-phone">Phone / WhatsApp</label>
+                  <input id="c-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210">
+                  <div class="form-error" data-error-for="c-phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>Use digits, spaces and + only.</span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="c-topic">What is this about?</label>
+                  <select id="c-topic" name="topic">
+                    <option value="general">General enquiry</option>
+                    <option value="custom-blend">A custom masala blend</option>
+                    <option value="trade-terms">Trade terms &amp; credit</option>
+                    <option value="bulk">Bulk or contract supply</option>
+                    <option value="private-label">Private-label packaging</option>
+                    <option value="training">Kitchen training</option>
+                    <option value="gifting">Gifting &amp; hampers</option>
+                    <option value="visit">Booking a mill visit</option>
+                    <option value="press">Press &amp; writing</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="c-service">Service of interest</label>
+                  <select id="c-service" name="service">
+                    <option value="unsure">Not sure — advise me</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="c-volume">Volume</label>
+                  <select id="c-volume" name="volume">
+                    <option value="unsure">Not sure yet</option>
+                    <option value="under-1">Under 1 kg</option>
+                    <option value="1-5">1 – 5 kg</option>
+                    <option value="5-50" selected>5 – 50 kg</option>
+                    <option value="50-500">50 – 500 kg</option>
+                    <option value="500+">500 kg+</option>
+                  </select>
+                </div>
+
+                <div class="field span-2">
+                  <label for="c-message">Your message <span class="req">*</span></label>
+                  <textarea id="c-message" name="message" rows="6" required minlength="25" maxlength="2000"
+                            placeholder="The dish or product, the quantity, the granule you want, the packaging, and the date it is needed by."></textarea>
+                  <div class="form-error" data-error-for="c-message">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>Please give us at least 25 characters to work with.</span>
+                  </div>
+                </div>
+
+                <div class="field span-2">
+                  <label class="checkbox-row" for="c-consent">
+                    <input type="checkbox" id="c-consent" name="consent" required>
+                    <span>I agree to be contacted about this enquiry and have read the <a href="Privacy-policy.html">privacy policy</a>. <span class="req">*</span></span>
+                  </label>
+                  <div class="form-error" data-error-for="c-consent">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>We need your consent to reply.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Send to the trade desk</button>
+                <span style="font-size:.82rem;color:var(--color-muted-text);">Replies within one working day.</span>
+              </div>
+            </form>
+          </div>
+
+          <aside class="sidebar">
+            <div class="widget">
+              <h4>Departments</h4>
+              <ul class="dept-list">
+                <li>
+                  <span data-dept-icon="cart" aria-hidden="true"></span>
+                  <div>
+                    <strong>Orders &amp; dispatch</strong>
+                    <span>Existing customers, batch cards, reorders</span>
+                    <a href="mailto:orders@amrithaspices.in">orders@amrithaspices.in</a>
+                  </div>
+                </li>
+                <li>
+                  <span data-dept-icon="blend" aria-hidden="true"></span>
+                  <div>
+                    <strong>Blends &amp; development</strong>
+                    <span>Matching an existing masala, scaling a recipe</span>
+                    <a href="mailto:blends@amrithaspices.in">blends@amrithaspices.in</a>
+                  </div>
+                </li>
+                <li>
+                  <span data-dept-icon="book" aria-hidden="true"></span>
+                  <div>
+                    <strong>Press &amp; writing</strong>
+                    <span>Sample requests, interviews, images of the mill</span>
+                    <a href="mailto:press@amrithaspices.in">press@amrithaspices.in</a>
+                  </div>
+                </li>
+                <li>
+                  <span data-dept-icon="training" aria-hidden="true"></span>
+                  <div>
+                    <strong>Amritha kitchen training</strong>
+                    <span>Cohorts, seating and course dates</span>
+                    <a href="home-2.html">See the chef programme</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="widget">
+              <h4>Opening hours</h4>
+              <ul class="hours-list">
+                <li><span>Monday – Friday</span><strong>8:00 – 20:00</strong></li>
+                <li><span>Saturday</span><strong>8:00 – 18:00</strong></li>
+                <li><span>Sunday</span><strong>9:00 – 14:00</strong></li>
+                <li class="closed"><span>Mill floor access</span><strong>Closed Sundays</strong></li>
+                <li><span>Public holidays</span><strong>By appointment</strong></li>
+              </ul>
+            </div>
+
+            <div class="widget widget-dark">
+              <h4>Already know what you need?</h4>
+              <p>Skip the form. Open the brief for the exact service and use the enquiry on that page — it arrives with the service already attached.</p>
+              <a class="btn btn-gold btn-sm btn-block" href="services.html">Open a service brief</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. VISIT + MAP -->
+    <section class="page-section-sm section-alt" id="visit" aria-labelledby="visit-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">COME AND SEE</span>
+          <h2 id="visit-heading">Visiting the Mill</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+          <p>Bazaar Road, Mattancherry. Ten minutes on foot from Mattancherry Beach, twenty-five from Fort Kochi.</p>
+        </div>
+
+        <div class="grid grid-sidebar-right" style="align-items:start;">
+          <div class="map-frame" style="min-height:420px;">
+            <iframe
+              title="Map showing the Amritha Spice Mill on Bazaar Road, Mattancherry, Kochi"
+              src="https://maps.google.com/maps?q=Bazaar%20Road%2C%20Mattancherry%2C%20Kochi%2C%20Kerala%20682002&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%" height="420" style="border:0;display:block;" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <div class="map-card">
+              <h4>Amritha Spice Mill</h4>
+              <p>48 Heritage Spice Quarter, Bazaar Road,<br>Mattancherry, Kochi 682002, Kerala</p>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Bazaar+Road+Mattancherry+Kochi+Kerala+682002"
+                 target="_blank" rel="noopener noreferrer">Get directions &rarr;</a>
+            </div>
+          </div>
+
+          <aside class="sidebar">
+            <div class="widget">
+              <h4>What a visit looks like</h4>
+              <ol class="plain" style="list-style:none;padding-inline-start:0;counter-reset:visit;">
+                <li><strong>1.</strong> Coffee at the packing bench, and a look at the current harvest lots.</li>
+                <li><strong>2.</strong> Through to the mill floor. You will hear the stones before you see them.</li>
+                <li><strong>3.</strong> A comparative tasting: same spice, four granule profiles, no commentary from us.</li>
+                <li><strong>4.</strong> Sit with the trade desk and talk volumes, packaging and dates.</li>
+              </ol>
+            </div>
+            <div class="widget">
+              <h4>Before you come</h4>
+              <ul class="col-check" style="gap:12px;">
+                <li>Closed shoes on the mill floor, please.</li>
+                <li>No photography in the lab room.</li>
+                <li>Shoes and coats are stored at the gate.</li>
+                <li>Groups over six need a week&rsquo;s notice.</li>
+              </ul>
+            </div>
+            <div class="widget widget-dark">
+              <h4>Not in Kochi?</h4>
+              <p>We ship to 34 countries and run a sample programme. Ask for the sample box and we will send four 100 g packs so you can test before committing to a pallet.</p>
+              <a class="btn btn-gold btn-sm btn-block" href="contact.html?topic=general">Request the sample box</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. BEFORE YOU WRITE -->
+    <section class="page-section-sm" aria-labelledby="before-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">SAVES BOTH OF US A MESSAGE</span>
+          <h2 id="before-heading">The Five Things We Always Ask For</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+
+        <div class="grid grid-3" id="ask-for"></div>
+
+        <div class="note info" style="margin-top:32px;">
+          <span class="note-icon" data-note-icon="info" aria-hidden="true"></span>
+          <p><strong>Not sure about any of them?</strong> Send what you have. Half of what arrives is a photo of a label and a rough quantity, and that is genuinely enough to start a conversation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CLOSING CTA -->
+    <section class="cta-strip">
+      <div class="container">
+        <h2>Prefer the Phone?</h2>
+        <p>Mon – Sat, 8am – 8pm IST. Ask for the trade desk and you will reach someone who can actually change a granule profile on the run.</p>
+        <div class="btn-row">
+          <a class="btn btn-gold" href="tel:+919840123456">+91 98401 23456</a>
+          <a class="btn btn-outline-light" href="mailto:mill@amrithaspices.in">mill@amrithaspices.in</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../src/js/data/images.js"></script>
+  <script src="../src/js/data/icons.js"></script>
+  <script src="../src/js/data/services.js"></script>
+
+  <script src="../src/js/toast.js"></script>
+  <script src="../src/js/navbar.js"></script>
+  <script src="../src/js/footer.js"></script>
+  <script src="../src/js/ui.js"></script>
+  <script src="../src/js/form-validation.js"></script>
+  <script src="../src/js/pages/kit.js"></script>
+  <script src="../src/js/pages/contact.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Centre &amp; FAQs | Amritha Spice Mill</title>
+  <meta name="description" content="Answers on granule size, volatile oils, storage, batch cards, minimum orders, shipping, private label, gifting and kitchen training from the Amritha Spice Mill.">
+  <meta name="theme-color" content="#082052">
+
+  <script src="../src/js/theme.js"></script>
+  <script src="../src/js/rtl-toggle.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../src/js/tailwind-config.js"></script>
+
+  <link rel="stylesheet" href="../src/css/style.css">
+  <link rel="stylesheet" href="../src/css/pages.css">
+</head>
+<body data-base="../" data-page="faq">
+
+  <div id="site-navbar"></div>
+
+  <main id="main-content">
+
+    <!-- 1. SEARCH HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="crumb-sep" aria-hidden="true">/</span>
+          <span class="crumb-current" aria-current="page">Help Centre</span>
+        </nav>
+        <span class="eyebrow">FORTY-ONE ANSWERS, NONE OF THEM VAGUE</span>
+        <h1>Help Centre</h1>
+        <p>Search it, or pick a subject on the left. If your question is not here, the trade desk answers within one working day and we will add it to this page afterwards.</p>
+
+        <div class="search-hero">
+          <div class="search-wrap">
+            <span id="faq-search-icon" aria-hidden="true"></span>
+            <label class="sr-only" for="faq-search">Search the help centre</label>
+            <input class="search-input" id="faq-search" type="search" placeholder="Search “granule”, “storage”, “batch card”…" autocomplete="off">
+          </div>
+          <p class="filter-count"><strong id="faq-count">0</strong> of <span id="faq-total">0</span> questions</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FAQ LAYOUT -->
+    <section class="page-section" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="faq-layout">
+          <aside class="faq-side">
+            <h3 id="faq-heading">Subjects</h3>
+            <div class="filter-chips" data-filter-group="faq" role="group" aria-label="Filter questions by subject">
+              <button class="filter-chip active" data-filter-value="all" type="button">All</button>
+            </div>
+
+            <div class="widget" style="margin-top:24px;background:var(--color-warm-card);">
+              <h4>Still stuck?</h4>
+              <p style="font-size:.88rem;color:var(--color-muted-text);line-height:1.65;">Ask the trade desk. A person, one working day, no call-back games.</p>
+              <a class="btn btn-primary btn-sm btn-block" href="contact.html">Ask a question</a>
+            </div>
+          </aside>
+
+          <div>
+            <div class="accordion" data-accordion="single" id="faq-accordion" aria-live="polite">
+              <noscript>
+                <p>Enable JavaScript to search the Help Centre, or call the trade desk on <a href="tel:+919840123456">+91 98401 23456</a>.</p>
+              </noscript>
+            </div>
+
+            <div class="result-empty" id="faq-empty">
+              <h3>No answer for that yet</h3>
+              <p>Try a shorter search, or ask us directly — if it is a good question it will be on this page next month.</p>
+              <p style="margin-top:18px;"><button class="btn btn-primary btn-sm" id="faq-reset" type="button">Show everything</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. THE FIVE WE ANSWER MOST -->
+    <section class="page-section-sm section-alt" aria-labelledby="top-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">IF YOU READ NOTHING ELSE</span>
+          <h2 id="top-heading">The Five We Answer Most Often</h2>
+          <div class="gold-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="motif">&#10022;</span>
+            <span class="line right"></span>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="gap:26px;" id="popular-questions" data-accordion="single"></div>
+      </div>
+    </section>
+
+    <!-- 4. WRITE TO US -->
+    <section class="page-section" aria-labelledby="ask-heading">
+      <div class="container">
+        <div class="grid grid-sidebar-right" style="align-items:start;">
+          <div class="form-card">
+            <span class="eyebrow">CANNOT FIND IT?</span>
+            <h3 id="ask-heading" style="margin-top:8px;">Ask the Trade Desk</h3>
+            <p class="form-intro">Include the spice, the quantity and the dish if you have one. A photograph of the current pack is usually more useful than a description of it.</p>
+
+            <form id="faq-question-form" data-validate novalidate
+                  data-success-title="Question received"
+                  data-success-message="Thank you. We will answer within one working day, and if the question comes up again the answer goes on this page."
+                  data-success-toast="Question received — answered within one working day.">
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="fq-name">Name <span class="req">*</span></label>
+                  <input id="fq-name" name="name" type="text" required minlength="2" autocomplete="name" placeholder="Your name">
+                </div>
+                <div class="field">
+                  <label for="fq-email">Email <span class="req">*</span></label>
+                  <input id="fq-email" name="email" type="email" required autocomplete="email" placeholder="you@kitchen.com">
+                </div>
+                <div class="field span-2">
+                  <label for="fq-question">Your question <span class="req">*</span></label>
+                  <textarea id="fq-question" name="question" rows="5" required minlength="15" maxlength="1000"
+                            placeholder="Be specific. “Why does my coriander smell dusty?” gets a better answer than “quality question”."></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Send the question</button>
+                <span style="font-size:.82rem;color:var(--color-muted-text);">Answered within one working day.</span>
+              </div>
+            </form>
+          </div>
+
+          <aside class="sidebar">
+            <div class="widget">
+              <h4>Faster than writing</h4>
+              <ul class="dept-list">
+                <li>
+                  <span data-side-icon="phone" aria-hidden="true"></span>
+                  <div>
+                    <strong>Trade desk</strong>
+                    <span>Mon – Sat, 8am – 8pm IST</span>
+                    <a href="tel:+919840123456">+91 98401 23456</a>
+                  </div>
+                </li>
+                <li>
+                  <span data-side-icon="mail" aria-hidden="true"></span>
+                  <div>
+                    <strong>Email</strong>
+                    <span>Attach the label or batch card if you have one</span>
+                    <a href="mailto:mill@amrithaspices.in">mill@amrithaspices.in</a>
+                  </div>
+                </li>
+                <li>
+                  <span data-side-icon="whatsapp" aria-hidden="true"></span>
+                  <div>
+                    <strong>WhatsApp</strong>
+                    <span>Photographs are welcome</span>
+                    <a href="https://wa.me/919840123456" target="_blank" rel="noopener noreferrer">Message the mill</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="widget widget-dark">
+              <h4>Reading before you ask</h4>
+              <p>Our Journal answers the technical questions properly, with the measurements attached.</p>
+              <a class="btn btn-gold btn-sm btn-block" href="blog.html">Open the Journal</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../src/js/data/images.js"></script>
+  <script src="../src/js/data/icons.js"></script>
+
+  <script src="../src/js/toast.js"></script>
+  <script src="../src/js/navbar.js"></script>
+  <script src="../src/js/footer.js"></script>
+  <script src="../src/js/ui.js"></script>
+  <script src="../src/js/form-validation.js"></script>
+  <script src="../src/js/pages/kit.js"></script>
+  <script src="../src/js/pages/faq.js"></script>
+
+</body>
+</html>
