@@ -104,22 +104,25 @@
 
   var TESTIMONIALS = [
     {
-      text: 'I came believing my masala problem was my cook. It was my cardamom — the oil had left it months before it reached my kitchen. Three cohorts later I have a granule card taped inside the prep door.',
+      text: 'I came believing my masala problem was my cook. It was my cardamom — the oil had left it months before it reached my kitchen.',
       name: 'Chef Anita Menon',
       role: 'Head Chef, Copper Leaf · Bengaluru',
-      rating: 5
+      rating: 5,
+      img: '../assets/woman1.jpg'
     },
     {
       text: 'The two kilos I took home were the first spice I have ever been able to explain to my supplier. That has made the last four years of ordering much cheaper.',
       name: 'Daniel Okafor',
       role: 'Owner, Ember & Rye · London',
-      rating: 5
+      rating: 5,
+      img: '../assets/men3.jpg'
     },
     {
       text: 'We sent four chefs. All four changed our pepper masala within a fortnight, and the dish cost went down because we stopped buying a masala at all.',
       name: 'Chef Radhika Iyer',
       role: 'Group Executive Chef · Chennai',
-      rating: 4
+      rating: 4,
+      img: '../assets/woman2.jpg'
     }
   ];
 
@@ -181,13 +184,14 @@
   function renderTestimonials() {
     var K = window.PageKit;
     K.fill('testimonial-grid', TESTIMONIALS.map(function (item) {
+      var avatarHtml = item.img
+        ? '<img src="' + item.img + '" alt="' + K.esc(item.name) + '" style="width:50px;height:50px;border-radius:50%;object-fit:cover;flex-shrink:0;">'
+        : '<span class="avatar">' + K.esc(item.name.replace(/^Chef\s+/, '').split(' ').map(function (p) { return p.charAt(0); }).join('').slice(0, 2).toUpperCase()) + '</span>';
       return '<div class="quote-card reveal">' +
         '<div class="quote-mark" aria-hidden="true">&ldquo;</div>' +
         '<p class="quote-text">' + K.esc(item.text) + '</p>' +
         '<div class="quote-author">' +
-          '<span class="avatar">' + K.esc(item.name.replace(/^Chef\s+/, '').split(' ').map(function (part) {
-            return part.charAt(0);
-          }).join('').slice(0, 2).toUpperCase()) + '</span>' +
+          avatarHtml +
           '<div><strong>' + K.esc(item.name) + '</strong><span>' + K.esc(item.role) + '</span></div>' +
         '</div>' +
         '<div class="stars" style="margin-top:14px;" aria-label="' + item.rating + ' out of 5">' + K.stars(item.rating) + '</div>' +

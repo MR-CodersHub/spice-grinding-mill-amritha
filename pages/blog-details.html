@@ -6,6 +6,7 @@
   <title>Journal Article | Amritha Spice Mill</title>
   <meta name="description" content="A working note from the Amritha Spice Mill: measured comparisons, sourcing reports and blend development from a third-generation mill.">
   <meta name="theme-color" content="#082052">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
 
   <script src="../src/js/theme.js"></script>
   <script src="../src/js/rtl-toggle.js"></script>
@@ -19,108 +20,674 @@
 
   <link rel="stylesheet" href="../src/css/style.css">
   <link rel="stylesheet" href="../src/css/pages.css">
+
+  <style>
+    /* ==========================================================================
+       EDITORIAL BLOG DETAILS REDESIGN
+       ========================================================================== */
+
+    /* 1. Reading Progress Bar */
+    .reading-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3.5px;
+      background: linear-gradient(90deg, var(--color-primary, #b45309), var(--color-soft-gold, #d97706), #f59e0b);
+      z-index: 9999;
+      transition: width 0.1s ease-out;
+      box-shadow: 0 0 10px rgba(217, 119, 6, 0.5);
+    }
+
+    /* 2. Top Hero Visual & Banner */
+    .bd-hero-wrap {
+      position: relative;
+      width: 100%;
+      background: linear-gradient(180deg, rgba(8, 32, 82, 0.95) 0%, rgba(13, 26, 54, 0.98) 100%);
+      padding-top: calc(var(--nav-height, 74px) + 24px);
+      padding-bottom: 90px;
+      overflow: hidden;
+    }
+
+    .bd-hero-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 75% 20%, rgba(217, 119, 6, 0.12), transparent 55%),
+                  radial-gradient(circle at 20% 80%, rgba(217, 119, 6, 0.08), transparent 45%);
+      pointer-events: none;
+    }
+
+    .bd-hero-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bd-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.84rem;
+      letter-spacing: 0.03em;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .bd-breadcrumbs a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .bd-breadcrumbs a:hover {
+      color: var(--color-soft-gold, #f59e0b);
+    }
+
+    .bd-breadcrumbs .crumb-sep {
+      opacity: 0.4;
+      font-size: 0.75rem;
+    }
+
+    .bd-breadcrumbs .crumb-current {
+      color: var(--color-soft-gold, #f59e0b);
+      font-weight: 500;
+      max-width: 480px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* 3. Floating Editorial Card */
+    .bd-card-float {
+      background: var(--color-warm-surface, #ffffff);
+      border: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.25));
+      border-radius: var(--radius-md, 16px);
+      padding: 44px 50px 38px;
+      box-shadow: 0 22px 50px -12px rgba(8, 32, 82, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      position: relative;
+      margin-top: -50px;
+      z-index: 10;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .bd-card-float {
+        padding: 28px 22px;
+        margin-top: -30px;
+        border-radius: 12px;
+      }
+    }
+
+    .bd-category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(217, 119, 6, 0.12);
+      color: var(--color-primary, #b45309);
+      border: 1px solid rgba(217, 119, 6, 0.3);
+      padding: 5px 14px;
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .bd-title {
+      font-family: var(--font-serif, "Playfair Display", serif);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      line-height: 1.2;
+      font-weight: 700;
+      color: var(--color-dark-text, #111827);
+      margin-bottom: 18px;
+      letter-spacing: -0.015em;
+    }
+
+    .bd-excerpt {
+      font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+      line-height: 1.75;
+      color: var(--color-muted-text, #4b5563);
+      max-width: 82ch;
+      margin-bottom: 28px;
+      font-style: normal;
+    }
+
+    .bd-meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 24px;
+      border-top: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.18));
+    }
+
+    .bd-author-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .bd-author-details strong {
+      display: block;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--color-dark-text, #111827);
+      line-height: 1.3;
+    }
+
+    .bd-author-details span {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--color-muted-text, #6b7280);
+      line-height: 1.3;
+    }
+
+    .bd-meta-pills {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .bd-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-warm-bg, #f9fafb);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--color-muted-text, #4b5563);
+    }
+
+    /* 4. Cinematic Featured Image Banner */
+    .bd-image-frame {
+      margin-top: 40px;
+      border-radius: var(--radius-md, 16px);
+      overflow: hidden;
+      border: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.2));
+      box-shadow: 0 16px 36px -10px rgba(8, 32, 82, 0.16);
+      background: #0d1a36;
+      position: relative;
+    }
+
+    .bd-image-frame img {
+      width: 100%;
+      height: auto;
+      max-height: 540px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .bd-caption {
+      padding: 12px 20px;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--color-muted-text, #6b7280);
+      background: var(--color-warm-surface, #ffffff);
+      border-top: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.15));
+      text-align: center;
+    }
+
+    /* 5. Article Layout & Sticky TOC */
+    .bd-content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 48px;
+      margin-top: 50px;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .bd-content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .bd-article-body {
+      background: var(--color-warm-surface, #ffffff);
+      border: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.18));
+      border-radius: var(--radius-md, 16px);
+      padding: 44px 48px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    @media (max-width: 768px) {
+      .bd-article-body {
+        padding: 24px 20px;
+        border-radius: 12px;
+      }
+    }
+
+    /* Enhanced Prose for Editorial Look */
+    .bd-article-body .prose {
+      font-size: 1.1rem;
+      line-height: 1.88;
+      color: var(--color-dark-text, #1f2937);
+      max-width: 100%;
+    }
+
+    .bd-article-body .prose h2 {
+      font-family: var(--font-serif, "Playfair Display", serif);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--color-dark-text, #111827);
+      margin-top: 2.4em;
+      margin-bottom: 0.75em;
+      padding-bottom: 0.4em;
+      border-bottom: 1.5px solid var(--color-gold-border, rgba(217, 119, 6, 0.25));
+      position: relative;
+    }
+
+    .bd-article-body .prose h2::after {
+      content: '';
+      position: absolute;
+      bottom: -1.5px;
+      left: 0;
+      width: 48px;
+      height: 2px;
+      background: var(--color-soft-gold, #d97706);
+    }
+
+    .bd-article-body .prose h3 {
+      font-family: var(--font-serif, "Playfair Display", serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--color-dark-text, #111827);
+      margin-top: 1.8em;
+      margin-bottom: 0.6em;
+    }
+
+    .bd-article-body .prose p {
+      margin-bottom: 1.6em;
+    }
+
+    .bd-article-body .prose p:first-of-type::first-letter {
+      font-family: var(--font-serif, "Playfair Display", serif);
+      font-size: 3.4em;
+      float: left;
+      line-height: 0.85;
+      padding-right: 12px;
+      padding-top: 4px;
+      color: var(--color-primary, #b45309);
+      font-weight: 700;
+    }
+
+    .bd-article-body .prose blockquote {
+      border-left: 4px solid var(--color-soft-gold, #d97706);
+      padding: 16px 24px;
+      margin: 32px 0;
+      background: rgba(217, 119, 6, 0.05);
+      border-radius: 0 12px 12px 0;
+      font-family: var(--font-serif, "Cormorant Garamond", Georgia, serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--color-dark-text, #1f2937);
+      line-height: 1.6;
+    }
+
+    .bd-article-body .prose ul,
+    .bd-article-body .prose ol {
+      margin: 20px 0 28px 24px;
+    }
+
+    .bd-article-body .prose li {
+      margin-bottom: 10px;
+    }
+
+    /* Tags Section */
+    .bd-tags-container {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--color-gold-border, rgba(217, 119, 6, 0.3));
+    }
+
+    .bd-tags-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-soft-gold, #b45309);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    /* Author Footer Card */
+    .bd-author-card {
+      margin-top: 44px;
+      background: linear-gradient(135deg, rgba(217, 119, 6, 0.06), rgba(8, 32, 82, 0.04));
+      border: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.3));
+      border-radius: 14px;
+      padding: 28px;
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 640px) {
+      .bd-author-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .bd-author-card .af-body h4 {
+      font-family: var(--font-serif, "Playfair Display", serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-dark-text, #111827);
+      margin-bottom: 8px;
+    }
+
+    .bd-author-card .af-body p {
+      font-size: 0.95rem;
+      line-height: 1.68;
+      color: var(--color-muted-text, #4b5563);
+      margin-bottom: 16px;
+    }
+
+    /* Prev / Next Pagination */
+    .bd-nav-pagination {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 640px) {
+      .bd-nav-pagination {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .bd-nav-link-card {
+      display: flex;
+      flex-direction: column;
+      padding: 18px 22px;
+      background: var(--color-warm-surface, #ffffff);
+      border: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.25));
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .bd-nav-link-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px -6px rgba(8, 32, 82, 0.12);
+      border-color: var(--color-soft-gold, #d97706);
+    }
+
+    .bd-nav-link-card.next {
+      text-align: right;
+    }
+
+    .bd-nav-link-card span.sub {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-soft-gold, #d97706);
+      margin-bottom: 6px;
+    }
+
+    .bd-nav-link-card span.title {
+      font-family: var(--font-serif, "Playfair Display", serif);
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--color-dark-text, #111827);
+      line-height: 1.35;
+    }
+
+    /* 6. Sticky Sidebar & Enhanced TOC */
+    .bd-sidebar-sticky {
+      position: sticky;
+      top: calc(var(--nav-height, 74px) + 24px);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .bd-toc-box {
+      background: var(--color-warm-surface, #ffffff);
+      border: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.25));
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .bd-toc-box h4 {
+      font-family: var(--font-serif, "Playfair Display", serif);
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--color-dark-text, #111827);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bd-toc-box h4::after {
+      content: '•';
+      color: var(--color-soft-gold, #d97706);
+      font-size: 1.4rem;
+    }
+
+    .bd-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .bd-toc-list li a {
+      display: block;
+      color: var(--color-muted-text, #6b7280);
+      text-decoration: none;
+      font-size: 0.88rem;
+      line-height: 1.4;
+      padding: 4px 8px 4px 12px;
+      border-left: 2px solid transparent;
+      border-radius: 0 6px 6px 0;
+      transition: all 0.2s ease;
+    }
+
+    .bd-toc-list li a:hover {
+      color: var(--color-primary, #b45309);
+      background: rgba(217, 119, 6, 0.06);
+    }
+
+    .bd-toc-list li.is-active a {
+      color: var(--color-primary, #b45309);
+      font-weight: 600;
+      border-left-color: var(--color-soft-gold, #d97706);
+      background: rgba(217, 119, 6, 0.08);
+    }
+
+    .bd-widget {
+      background: var(--color-warm-surface, #ffffff);
+      border: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.2));
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .bd-widget h4 {
+      font-family: var(--font-serif, "Playfair Display", serif);
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--color-dark-text, #111827);
+      margin-bottom: 14px;
+    }
+
+    .bd-widget-dark {
+      background: linear-gradient(145deg, #0a1f47 0%, #0d285d 100%);
+      border: 1px solid rgba(217, 119, 6, 0.35);
+      color: #ffffff;
+    }
+
+    .bd-widget-dark h4 {
+      color: #ffffff;
+    }
+
+    .bd-widget-dark p {
+      font-size: 0.9rem;
+      line-height: 1.68;
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 18px;
+    }
+
+    /* 7. Takeaways Section Accent */
+    .bd-takeaways-section {
+      background: linear-gradient(180deg, var(--color-warm-bg, #fbf8f2) 0%, rgba(217, 119, 6, 0.05) 100%);
+      border-top: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.2));
+      border-bottom: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.2));
+      padding: 70px 0;
+      margin-top: 80px;
+    }
+
+    /* 8. Ask Author Section Styling */
+    .bd-ask-wrap {
+      padding: 80px 0;
+    }
+  </style>
 </head>
 <body data-base="../" data-page="blog-details">
+
+  <!-- Scroll Progress Indicator -->
+  <div id="read-progress" class="reading-progress-bar" aria-hidden="true"></div>
 
   <div id="site-navbar"></div>
 
   <main id="main-content">
 
-    <!-- 1. ARTICLE HEADER -->
-    <section class="page-hero">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
+    <!-- 1. EDITORIAL HERO & BANNER HEADER -->
+    <header class="bd-hero-wrap">
+      <div class="bd-hero-container">
+        <!-- Breadcrumbs -->
+        <nav class="bd-breadcrumbs" aria-label="Breadcrumb">
           <a href="../index.html">Home</a>
           <span class="crumb-sep" aria-hidden="true">/</span>
           <a href="blog.html">The Journal</a>
           <span class="crumb-sep" aria-hidden="true">/</span>
-          <span class="crumb-current" id="crumb-current" aria-current="page">Loading…</span>
+          <span class="crumb-current" id="crumb-current" aria-current="page">Loading article…</span>
         </nav>
+      </div>
+    </header>
 
-        <div class="article-header" style="margin-bottom:0;border-bottom:0;padding-bottom:0;">
-          <span class="eyebrow" id="article-category">Journal</span>
-          <h1 id="article-title">Article</h1>
-          <p id="article-excerpt" style="font-size:1.08rem;color:var(--color-muted-text);line-height:1.8;max-width:70ch;"></p>
+    <!-- 2. FLOATING ARTICLE HEADER & FEATURED MEDIA -->
+    <section class="container" style="position:relative;">
+      <!-- Floating Header Card -->
+      <div class="bd-card-float">
+        <span class="bd-category-badge" id="article-category">Journal</span>
+        <h1 class="bd-title" id="article-title">Article</h1>
+        <p class="bd-excerpt" id="article-excerpt"></p>
 
-          <div class="article-meta" style="margin-top:22px;">
-            <div class="article-author">
-              <span class="avatar" id="article-initials" aria-hidden="true">—</span>
-              <div>
-                <strong id="article-author">Loading</strong>
-                <span id="article-role">—</span>
-              </div>
+        <!-- Meta Bar -->
+        <div class="bd-meta-bar">
+          <div class="bd-author-wrap">
+            <span class="avatar" id="article-initials" aria-hidden="true">—</span>
+            <div class="bd-author-details">
+              <strong id="article-author">Loading author</strong>
+              <span id="article-role">—</span>
             </div>
-            <span class="meta-pill" id="article-date">—</span>
-            <span class="meta-pill" id="article-read">—</span>
           </div>
 
-          <div class="share-row">
-            <span class="share-label">Share</span>
-            <span id="share-buttons" style="display:inline-flex;gap:10px;flex-wrap:wrap;"></span>
+          <div class="bd-meta-pills">
+            <span class="bd-pill" id="article-date">—</span>
+            <span class="bd-pill" id="article-read">—</span>
+          </div>
+
+          <div class="share-row" style="margin:0;">
+            <span class="share-label" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;">Share</span>
+            <span id="share-buttons" style="display:inline-flex;gap:8px;flex-wrap:wrap;"></span>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- 2. ARTICLE BODY + SIDEBAR -->
-    <section class="page-section-tight" aria-label="Article">
-      <div class="container">
-        <div class="article-layout">
+      <!-- Featured Image Container -->
+      <figure class="bd-image-frame">
+        <img id="article-image" src="" alt="" width="1600" height="900" fetchpriority="high">
+        <figcaption id="article-caption" class="bd-caption"></figcaption>
+      </figure>
 
-          <article>
-            <figure class="article-figure" style="margin-top:0;">
-              <img id="article-image" src="" alt="" width="1600" height="900" fetchpriority="high">
-              <figcaption id="article-caption"></figcaption>
-            </figure>
+      <!-- 3. MAIN ARTICLE BODY + SIDEBAR -->
+      <div class="bd-content-grid">
 
-            <div class="prose" id="article-body">
-              <p>Loading the article…</p>
-            </div>
+        <!-- Left Column: Article Prose, Tags, Author Bio, Prev/Next -->
+        <article class="bd-article-body">
+          <div class="prose" id="article-body">
+            <p>Loading the article…</p>
+          </div>
 
-            <div class="article-tags" id="article-tags" hidden>
-              <span class="share-label" style="display:block;margin-bottom:12px;">Filed under</span>
-              <div class="tag-row" id="article-tag-row"></div>
-            </div>
+          <!-- Tags -->
+          <div class="bd-tags-container" id="article-tags" hidden>
+            <span class="bd-tags-label">Filed under</span>
+            <div class="tag-row" id="article-tag-row"></div>
+          </div>
 
-            <div class="article-footer" id="article-footer" hidden>
-              <span class="avatar lg" id="footer-initials" aria-hidden="true">—</span>
-              <div class="af-body">
-                <h4 id="footer-name">—</h4>
-                <p id="footer-bio">—</p>
-              </div>
+          <!-- Author Bio Card -->
+          <div class="bd-author-card" id="article-footer" hidden>
+            <span class="avatar lg" id="footer-initials" aria-hidden="true">—</span>
+            <div class="af-body">
+              <h4 id="footer-name">—</h4>
+              <p id="footer-bio">—</p>
               <a class="btn btn-outline-dark btn-sm" id="footer-more" href="blog.html">More from the mill</a>
             </div>
+          </div>
 
-            <nav class="share-row" aria-label="Article navigation" style="margin-top:34px;">
-              <a class="btn btn-outline-dark btn-sm" id="prev-post" href="blog.html">Previous article</a>
-              <a class="btn btn-outline-dark btn-sm" id="next-post" href="blog.html">Next article</a>
-            </nav>
-          </article>
+          <!-- Previous / Next Navigation -->
+          <nav class="bd-nav-pagination" aria-label="Article navigation">
+            <a class="bd-nav-link-card prev" id="prev-post" href="blog.html">
+              <span class="sub">← Previous Article</span>
+              <span class="title">Previous</span>
+            </a>
+            <a class="bd-nav-link-card next" id="next-post" href="blog.html">
+              <span class="sub">Next Article →</span>
+              <span class="title">Next</span>
+            </a>
+          </nav>
+        </article>
 
-          <aside class="sidebar">
-            <nav class="legal-toc" id="toc" hidden aria-label="On this page">
-              <h4>On this page</h4>
-              <ol id="toc-list"></ol>
-            </nav>
+        <!-- Right Column: Sticky Sidebar -->
+        <aside class="bd-sidebar-sticky">
+          <!-- Table of contents -->
+          <nav class="bd-toc-box" id="toc" hidden aria-label="On this page">
+            <h4>On this page</h4>
+            <ol class="bd-toc-list" id="toc-list"></ol>
+          </nav>
 
-            <div class="widget">
-              <h4>Keep reading</h4>
-              <div id="sidebar-posts"></div>
-            </div>
+          <!-- Keep Reading Widget -->
+          <div class="bd-widget">
+            <h4>Keep Reading</h4>
+            <div id="sidebar-posts"></div>
+          </div>
 
-            <div class="widget widget-dark">
-              <h4>Read it on your own spices</h4>
-              <p>Most of what we write about is something we do for a client every week. If it applies to your kitchen, we can do it for you.</p>
-              <a class="btn btn-gold btn-sm btn-block" href="services.html">See the services</a>
-            </div>
-          </aside>
+          <!-- Services Callout Widget -->
+          <div class="bd-widget bd-widget-dark">
+            <h4>Read it on your own spices</h4>
+            <p>Most of what we write about is something we do for a client every week. If it applies to your kitchen, we can do it for you.</p>
+            <a class="btn btn-gold btn-sm btn-block" href="services.html">See the services</a>
+          </div>
+        </aside>
 
-        </div>
       </div>
     </section>
 
-    <!-- 3. KEY TAKEAWAYS -->
-    <section class="page-section-sm section-alt" aria-labelledby="takeaway-heading">
+    <!-- 4. KEY TAKEAWAYS -->
+    <section class="bd-takeaways-section" aria-labelledby="takeaway-heading">
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">IF YOU READ NOTHING ELSE</span>
@@ -135,8 +702,8 @@
       </div>
     </section>
 
-    <!-- 4. RELATED ARTICLES -->
-    <section class="page-section-sm" aria-labelledby="related-heading">
+    <!-- 5. RELATED ARTICLES -->
+    <section class="page-section-sm" aria-labelledby="related-heading" style="padding-top:70px;">
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">READ NEXT</span>
@@ -151,8 +718,8 @@
       </div>
     </section>
 
-    <!-- 5. QUESTION -->
-    <section class="page-section-sm" aria-labelledby="question-heading">
+    <!-- 6. ASK ABOUT THIS ARTICLE & AUTHOR INFO -->
+    <section class="bd-ask-wrap" aria-labelledby="question-heading">
       <div class="container">
         <div class="grid grid-sidebar-right" style="align-items:start;">
           <div class="form-card">
@@ -210,6 +777,7 @@
 
   <div id="site-footer"></div>
 
+  <!-- Scripts -->
   <script src="../src/js/data/images.js"></script>
   <script src="../src/js/data/icons.js"></script>
   <script src="../src/js/data/posts.js"></script>
@@ -222,6 +790,23 @@
   <script src="../src/js/form-validation.js"></script>
   <script src="../src/js/pages/kit.js"></script>
   <script src="../src/js/pages/blog-details.js"></script>
+
+  <!-- Reading Progress Script -->
+  <script>
+    (function() {
+      var progressBar = document.getElementById('read-progress');
+      if (!progressBar) return;
+      window.addEventListener('scroll', function() {
+        var totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (totalHeight <= 0) {
+          progressBar.style.width = '0%';
+          return;
+        }
+        var progress = (window.pageYOffset / totalHeight) * 100;
+        progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+      }, { passive: true });
+    })();
+  </script>
 
 </body>
 </html>

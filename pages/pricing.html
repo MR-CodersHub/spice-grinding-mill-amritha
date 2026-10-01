@@ -6,6 +6,7 @@
   <title>Plans &amp; Pricing | Amritha Spice Mill</title>
   <meta name="description" content="Indicative pricing for every mill service, from a 250 g cold-ground pack to a private-label contract. What moves the price, stated plainly, plus the guarantees that come with it.">
   <meta name="theme-color" content="#082052">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
 
   <script src="../src/js/theme.js"></script>
   <script src="../src/js/rtl-toggle.js"></script>
@@ -86,7 +87,6 @@
 
         <div class="grid grid-3">
           <div class="guarantee reveal">
-            <div class="icon-wrap" data-guarantee-icon="shield" aria-hidden="true"></div>
             <div>
               <h3>Reground free, 14 days</h3>
               <p>If a batch is not right, tell us within fourteen days and we re-mill it at no charge. It is almost always granule size, and getting that right is our job, not yours.</p>
@@ -94,15 +94,13 @@
           </div>
 
           <div class="guarantee reveal">
-            <div class="icon-wrap" data-guarantee-icon="flame" aria-hidden="true"></div>
-            <div>
+              <div>
               <h3>Under 38&nbsp;&deg;C, always</h3>
               <p>Every batch is probed and logged. If a run goes over 38&nbsp;&deg;C it is reground before dispatch, and the batch card says so either way.</p>
             </div>
           </div>
 
           <div class="guarantee reveal">
-            <div class="icon-wrap" data-guarantee-icon="package" aria-hidden="true"></div>
             <div>
               <h3>No adulteration, ever</h3>
               <p>No fillers, no carriers, no volatile extracts, and no cheaper lot blended into a premium one. If the standard moves, we decline the lot.</p>
@@ -172,11 +170,6 @@
               <h4>Service price index</h4>
               <p style="font-size:.88rem;color:var(--color-muted-text);line-height:1.65;">Entry price for each of the nine services. Open a brief for the full tier table.</p>
               <div id="price-index" style="display:flex;flex-direction:column;gap:12px;margin-top:6px;"></div>
-            </div>
-            <div class="widget widget-dark">
-              <h4>Want a real number?</h4>
-              <p>Send us the volume, the granule you want and the packaging. You will have a written quote within one working day.</p>
-              <a class="btn btn-gold btn-sm btn-block" href="contact.html">Ask for a quote</a>
             </div>
           </aside>
         </div>
@@ -274,129 +267,6 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. QUICK ENQUIRY -->
-    <section class="page-section" aria-labelledby="quick-heading">
-      <div class="container">
-        <div class="grid grid-sidebar-right" style="align-items:start;">
-          <div class="form-card">
-            <span class="eyebrow">THREE QUESTIONS, ONE PRICE</span>
-            <h3 id="quick-heading" style="margin-top:8px;">Get a Figure in a Working Day</h3>
-            <p class="form-intro">No call-back games. Tell us what you need and we will reply with a written figure you can hold us to.</p>
-
-            <form id="pricing-enquiry" data-validate novalidate
-                  data-success-title="Enquiry received"
-                  data-success-message="Thank you. A Master Miller will reply within one working day with a written figure, the assumptions behind it, and the date we can hold stock for you."
-                  data-success-toast="Enquiry received — written figure within one working day.">
-
-              <div class="form-grid">
-                <div class="field">
-                  <label for="pe-name">Name <span class="req">*</span></label>
-                  <input id="pe-name" name="name" type="text" required minlength="2" autocomplete="name" placeholder="Vikram Rao">
-                </div>
-                <div class="field">
-                  <label for="pe-email">Email <span class="req">*</span></label>
-                  <input id="pe-email" name="email" type="email" required autocomplete="email" placeholder="vikram@kitchen.com">
-                </div>
-
-                <div class="field span-2">
-                  <label id="pe-service-label">Which services? <span class="req">*</span></label>
-                  <div class="chip-select" role="group" aria-labelledby="pe-service-label" id="pe-services">
-                    <span class="chip-select">
-                      <input type="checkbox" id="pe-s1" name="services" value="stone-chakki-milling" data-required-group="services" required>
-                      <label for="pe-s1"><span class="dot" aria-hidden="true"></span>Cold stone milling</label>
-                    </span>
-                    <span class="chip-select">
-                      <input type="checkbox" id="pe-s2" name="services" value="custom-masala-blending" data-required-group="services" required>
-                      <label for="pe-s2"><span class="dot" aria-hidden="true"></span>Masala blending</label>
-                    </span>
-                    <span class="chip-select">
-                      <input type="checkbox" id="pe-s3" name="services" value="commercial-bulk-supply" data-required-group="services" required>
-                      <label for="pe-s3"><span class="dot" aria-hidden="true"></span>Bulk supply</label>
-                    </span>
-                    <span class="chip-select">
-                      <input type="checkbox" id="pe-s4" name="services" value="private-label-packaging" data-required-group="services" required>
-                      <label for="pe-s4"><span class="dot" aria-hidden="true"></span>Private label</label>
-                    </span>
-                    <span class="chip-select">
-                      <input type="checkbox" id="pe-s5" name="services" value="spice-consultancy" data-required-group="services" required>
-                      <label for="pe-s5"><span class="dot" aria-hidden="true"></span>Consultancy</label>
-                    </span>
-                    <span class="chip-select">
-                      <input type="checkbox" id="pe-s6" name="services" value="spice-kits-gifting" data-required-group="services" required>
-                      <label for="pe-s6"><span class="dot" aria-hidden="true"></span>Gifting kits</label>
-                    </span>
-                    <span class="chip-select">
-                      <input type="checkbox" id="pe-s7" name="services" value="amcham-kitchen-training" data-required-group="services" required>
-                      <label for="pe-s7"><span class="dot" aria-hidden="true"></span>Kitchen training</label>
-                    </span>
-                    <span class="chip-select">
-                      <input type="checkbox" id="pe-s8" name="services" value="herb-infusion-oils" data-required-group="services" required>
-                      <label for="pe-s8"><span class="dot" aria-hidden="true"></span>Infusion oils</label>
-                    </span>
-                    <span class="chip-select">
-                      <input type="checkbox" id="pe-s9" name="services" value="whole-spice-grading" data-required-group="services" required>
-                      <label for="pe-s9"><span class="dot" aria-hidden="true"></span>Grading &amp; cleaning</label>
-                    </span>
-                  </div>
-                  <p class="hint">Choose as many as apply.</p>
-                </div>
-
-                <div class="field">
-                  <label for="pe-volume">Monthly volume</label>
-                  <select id="pe-volume" name="volume">
-                    <option value="unsure">Not sure yet</option>
-                    <option value="under-5">Under 5 kg</option>
-                    <option value="5-50" selected>5 – 50 kg</option>
-                    <option value="50-250">50 – 250 kg</option>
-                    <option value="250+">250 kg+</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="pe-plan">Plan you are considering</label>
-                  <select id="pe-plan" name="plan">
-                    <option value="unsure">Not sure — advise me</option>
-                    <option value="pantry">Pantry</option>
-                    <option value="kitchen">Kitchen</option>
-                    <option value="restaurant">Restaurant</option>
-                    <option value="contract">Contract</option>
-                  </select>
-                </div>
-
-                <div class="field span-2">
-                  <label for="pe-notes">Anything that affects the figure? <span class="req">*</span></label>
-                  <textarea id="pe-notes" name="notes" rows="4" required minlength="20" maxlength="1000"
-                            placeholder="Granule size, packaging, existing blend you are matching, deadline…"></textarea>
-                  <p class="hint">A sentence is plenty. Blank detail means a vague quote.</p>
-                </div>
-              </div>
-
-              <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Send for a written figure</button>
-                <span style="font-size:.82rem;color:var(--color-muted-text);">One working day, in writing.</span>
-              </div>
-            </form>
-          </div>
-
-          <aside class="sidebar">
-            <div class="widget">
-              <h4>How we quote</h4>
-              <ol class="plain" style="counter-reset:step;padding-inline-start:0;list-style:none;">
-                <li><strong>1.</strong> You send volume, granule and packaging.</li>
-                <li><strong>2.</strong> We check the harvest and stock position.</li>
-                <li><strong>3.</strong> You get a written figure with the assumptions listed.</li>
-                <li><strong>4.</strong> Nothing is charged until you confirm.</li>
-              </ol>
-            </div>
-            <div class="widget widget-dark">
-              <h4>Trade terms</h4>
-              <p>Registered kitchens and hotels can apply for 30-day trade terms. Ask the trade desk and we will send the form.</p>
-              <a class="btn btn-gold btn-sm btn-block" href="contact.html?topic=trade-terms">Apply for trade terms</a>
-            </div>
-          </aside>
         </div>
       </div>
     </section>

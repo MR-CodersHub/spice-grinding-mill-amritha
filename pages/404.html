@@ -6,6 +6,7 @@
   <title>Page Not Found | Amritha Spice Mill</title>
   <meta name="description" content="That page is not here. Search the mill's services and journal, or pick up one of the routes below.">
   <meta name="theme-color" content="#082052">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
   <meta name="robots" content="noindex, follow">
 
   <script src="../src/js/theme.js"></script>
@@ -22,8 +23,6 @@
   <link rel="stylesheet" href="../src/css/pages.css">
 </head>
 <body data-base="../" data-page="404">
-
-  <div id="site-navbar"></div>
 
   <main id="main-content">
 
@@ -63,88 +62,7 @@
       </div>
     </section>
 
-    <!-- 3. WHERE YOU PROBABLY WANTED TO GO -->
-    <section class="page-section-sm section-alt" aria-labelledby="routes-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">THE USUAL SUSPECTS</span>
-          <h2 id="routes-heading">Where You Probably Wanted to Go</h2>
-          <div class="gold-divider" aria-hidden="true">
-            <span class="line"></span>
-            <span class="motif">&#10022;</span>
-            <span class="line right"></span>
-          </div>
-        </div>
-
-        <div class="grid grid-3" id="route-cards"></div>
-      </div>
-    </section>
-
-    <!-- 4. THE MOST-VISITED SERVICES -->
-    <section class="page-section-sm" aria-labelledby="service-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">STARTING POINTS</span>
-          <h2 id="service-heading">The Services Most People Come For</h2>
-          <div class="gold-divider" aria-hidden="true">
-            <span class="line"></span>
-            <span class="motif">&#10022;</span>
-            <span class="line right"></span>
-          </div>
-        </div>
-
-        <div class="grid grid-3" id="service-preview"></div>
-
-        <p style="text-align:center;margin-top:34px;">
-          <a class="btn btn-outline-dark" href="services.html">See all nine services</a>
-        </p>
-      </div>
-    </section>
-
-    <!-- 5. THE SMALL PRINT OF A 404 -->
-    <section class="page-section-sm section-navy" aria-labelledby="note-heading">
-      <div class="container">
-        <div class="grid grid-2" style="gap:44px;align-items:start;">
-          <div>
-            <span class="eyebrow">A NOTE ON LINKS</span>
-            <h2 id="note-heading" style="color:var(--color-primary-text);margin:12px 0 18px;">If a Link Here Brought You to This Page</h2>
-            <p style="color:rgba(248,240,229,.78);line-height:1.8;">Then that is our mistake, and we would like to fix it. Tell us which page sent you and we will repair the link the same week.</p>
-            <p style="color:rgba(248,240,229,.78);line-height:1.8;">If you typed a service address by hand, the service briefs all take the form <span style="font-family:var(--font-mono);font-size:.92em;color:var(--color-soft-gold);">service-details.html?id=stone-chakki-milling</span> — nine of them, listed on the catalogue page.</p>
-          </div>
-          <div class="form-card" style="background:rgba(255,255,255,.05);border-color:rgba(201,164,92,.35);">
-            <h3 style="color:var(--color-soft-gold);">Report a broken link</h3>
-            <p class="form-intro" style="color:rgba(248,240,229,.75);">Thirty seconds of your time, and the page stops being broken for everyone else.</p>
-
-            <form id="broken-link-form" data-validate novalidate
-                  data-success-title="Reported — thank you"
-                  data-success-message="We have the page you came from and we will repair the link this week. Genuinely, thank you."
-                  data-success-toast="Broken link reported — thank you.">
-
-              <div class="field">
-                <label for="bl-page">Which page sent you? <span class="req">*</span></label>
-                <input id="bl-page" name="page" type="text" required minlength="2" placeholder="e.g. the Journal, or an email newsletter">
-              </div>
-              <div class="field">
-                <label for="bl-email">Your email <span class="req">*</span></label>
-                <input id="bl-email" name="email" type="email" required autocomplete="email" placeholder="you@kitchen.com">
-              </div>
-              <div class="field">
-                <label for="bl-target">Where were you trying to go? <span class="req">*</span></label>
-                <input id="bl-target" name="target" type="text" required minlength="2" placeholder="Anything you remember of it">
-              </div>
-
-              <div class="form-actions">
-                <button type="submit" class="btn btn-gold">Report it</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
-
-  <div id="site-footer"></div>
 
   <script src="../src/js/data/images.js"></script>
   <script src="../src/js/data/icons.js"></script>
@@ -152,8 +70,6 @@
   <script src="../src/js/data/posts.js"></script>
 
   <script src="../src/js/toast.js"></script>
-  <script src="../src/js/navbar.js"></script>
-  <script src="../src/js/footer.js"></script>
   <script src="../src/js/ui.js"></script>
   <script src="../src/js/form-validation.js"></script>
   <script src="../src/js/pages/kit.js"></script>

@@ -6,6 +6,7 @@
   <title>Mill Upgrades · Coming Soon | Amritha Spice Mill</title>
   <meta name="description" content="A second milling line, a public tasting room and online ordering for home kitchens. Work in progress at the Amritha Spice Mill, with a date and a way to be told when it opens.">
   <meta name="theme-color" content="#082052">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
 
   <script src="../src/js/theme.js"></script>
   <script src="../src/js/rtl-toggle.js"></script>
@@ -21,8 +22,6 @@
   <link rel="stylesheet" href="../src/css/pages.css">
 </head>
 <body data-base="../" data-page="coming-soon">
-
-  <div id="site-navbar"></div>
 
   <main id="main-content">
 
@@ -61,156 +60,8 @@
       </div>
     </section>
 
-    <!-- 2. WHAT IS BEING BUILT -->
-    <section class="page-section" aria-labelledby="building-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">THE BACK OF THE MILL</span>
-          <h2 id="building-heading">What Is Being Built</h2>
-          <div class="gold-divider" aria-hidden="true">
-            <span class="line"></span>
-            <span class="motif">&#10022;</span>
-            <span class="line right"></span>
-          </div>
-        </div>
-
-        <div class="grid grid-3" id="build-grid"></div>
-
-        <div class="note info" style="margin-top:34px;">
-          <span class="note-icon" data-note-icon="info" aria-hidden="true"></span>
-          <p><strong>None of this changes what we sell.</strong> Same stones, same 38&nbsp;&deg;C limit, same batch card, same refusal to blend a cheaper lot into a premium one. The second line doubles capacity so that a busy week does not push a dispatch date.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. WHAT IT DOES NOT AFFECT -->
-    <section class="page-section-sm section-alt" aria-labelledby="unaffected-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">WHILE THE DUST SETTLES</span>
-          <h2 id="unaffected-heading">What Is Not Affected</h2>
-          <div class="gold-divider" aria-hidden="true">
-            <span class="line"></span>
-            <span class="motif">&#10022;</span>
-            <span class="line right"></span>
-          </div>
-        </div>
-
-        <div class="grid grid-3">
-          <div class="icon-card reveal">
-            <div class="icon-wrap" data-build-icon="flame" aria-hidden="true"></div>
-            <h3>The stones keep turning</h3>
-            <p>The current line runs through the works untouched. Dispatch times and batch cards are unchanged.</p>
-          </div>
-          <div class="icon-card reveal">
-            <div class="icon-wrap" data-build-icon="leaf" aria-hidden="true"></div>
-            <h3>Sourcing is unchanged</h3>
-            <p>The same 2,400 farming families, the same direct contracts, the same payment on acceptance.</p>
-          </div>
-          <div class="icon-card reveal">
-            <div class="icon-wrap" data-build-icon="phone" aria-hidden="true"></div>
-            <h3>The trade desk still answers</h3>
-            <p>Same numbers, same hours, same four people above the packing floor. Nothing moves to a new address.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. TELL ME WHEN IT OPENS -->
-    <section class="page-section" aria-labelledby="notify-heading">
-      <div class="container">
-        <div class="grid grid-sidebar-right" style="align-items:start;">
-          <div class="form-card">
-            <span class="eyebrow">BE TOLD ONCE, NOT OFTEN</span>
-            <h3 id="notify-heading" style="margin-top:8px;">Tell Me When It Opens</h3>
-            <p class="form-intro">One message on the day the tasting room opens, and one when online ordering goes live for home kitchens. Nothing in between.</p>
-
-            <form id="notify-form" data-validate novalidate
-                  data-success-title="You are on the list"
-                  data-success-message="Thank you. You will hear from us once when the tasting room opens, and once when online ordering goes live. Nothing else, and no forwarding of your address to anyone."
-                  data-success-toast="You are on the list — one message on opening day.">
-
-              <div class="form-grid">
-                <div class="field">
-                  <label for="nt-name">Name <span class="req">*</span></label>
-                  <input id="nt-name" name="name" type="text" required minlength="2" autocomplete="name" placeholder="Your name">
-                </div>
-                <div class="field">
-                  <label for="nt-email">Email <span class="req">*</span></label>
-                  <input id="nt-email" name="email" type="email" required autocomplete="email" placeholder="you@kitchen.com">
-                </div>
-                <div class="field span-2">
-                  <label for="nt-interest">What are you waiting for? <span class="req">*</span></label>
-                  <div class="chip-select" role="group" aria-labelledby="nt-interest">
-                    <span class="chip-select">
-                      <input type="checkbox" id="nt-i1" name="interest" value="tasting-room" data-required-group="interest" required>
-                      <label for="nt-i1"><span class="dot" aria-hidden="true"></span>Tasting room</label>
-                    </span>
-                    <span class="chip-select">
-                      <input type="checkbox" id="nt-i2" name="interest" value="online-ordering" data-required-group="interest" required>
-                      <label for="nt-i2"><span class="dot" aria-hidden="true"></span>Home ordering</label>
-                    </span>
-                    <span class="chip-select">
-                      <input type="checkbox" id="nt-i3" name="interest" value="capacity" data-required-group="interest" required>
-                      <label for="nt-i3"><span class="dot" aria-hidden="true"></span>Faster dispatch</label>
-                    </span>
-                    <span class="chip-select">
-                      <input type="checkbox" id="nt-i4" name="interest" value="training" data-required-group="interest" required>
-                      <label for="nt-i4"><span class="dot" aria-hidden="true"></span>More training seats</label>
-                    </span>
-                  </div>
-                  <p class="hint">Choose as many as apply.</p>
-                </div>
-              </div>
-
-              <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Notify me</button>
-                <span style="font-size:.82rem;color:var(--color-muted-text);">Two messages, ever.</span>
-              </div>
-            </form>
-          </div>
-
-          <aside class="sidebar">
-            <div class="widget">
-              <h4>Where we usually are</h4>
-              <ul class="plain">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="services.html">Service catalogue</a></li>
-                <li><a href="pricing.html">Plans &amp; pricing</a></li>
-                <li><a href="blog.html">The Journal</a></li>
-                <li><a href="contact.html">Contact &amp; visit</a></li>
-              </ul>
-            </div>
-            <div class="widget widget-dark">
-              <h4>Come and see the works</h4>
-              <p>If you are in Kochi anyway, the trade desk will walk you past the building site. It is more interesting than it sounds.</p>
-              <a class="btn btn-gold btn-sm btn-block" href="contact.html?topic=visit">Book a visit</a>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. ROUTES -->
-    <section class="page-section-sm section-alt" aria-labelledby="routes-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">CARRY ON AS NORMAL</span>
-          <h2 id="routes-heading">Everything Else Is Open</h2>
-          <div class="gold-divider" aria-hidden="true">
-            <span class="line"></span>
-            <span class="motif">&#10022;</span>
-            <span class="line right"></span>
-          </div>
-        </div>
-
-        <div class="grid grid-3" id="route-cards"></div>
-      </div>
-    </section>
 
   </main>
-
-  <div id="site-footer"></div>
 
   <script src="../src/js/data/images.js"></script>
   <script src="../src/js/data/icons.js"></script>
@@ -218,8 +69,6 @@
   <script src="../src/js/data/posts.js"></script>
 
   <script src="../src/js/toast.js"></script>
-  <script src="../src/js/navbar.js"></script>
-  <script src="../src/js/footer.js"></script>
   <script src="../src/js/ui.js"></script>
   <script src="../src/js/form-validation.js"></script>
   <script src="../src/js/pages/kit.js"></script>

@@ -7,6 +7,7 @@
   <meta name="description" content="Sign in to the Amritha Spice Mill trade desk — batch records, standing orders, credit terms and reorder history for registered kitchens, hotels and distributors.">
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#082052">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
 
   <script src="../src/js/theme.js"></script>
 
@@ -19,97 +20,596 @@
 
   <link rel="stylesheet" href="../src/css/style.css">
   <link rel="stylesheet" href="../src/css/pages.css">
+
+  <style>
+    /* ==========================================================================
+       EDITORIAL LUXURY TRADE AUTH STYLING
+       ========================================================================== */
+    .auth-page-shell {
+      display: block;
+      min-height: 100vh;
+      background: var(--color-warm-bg, #fbf8f2);
+    }
+
+    /* Left Aside */
+    .auth-hero-aside {
+      background: linear-gradient(155deg, #051433 0%, #082052 50%, #0c2b6b 100%);
+      color: #ffffff;
+      padding: 60px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      border-inline-end: 2px solid var(--color-gold-border, rgba(217, 119, 6, 0.35));
+    }
+
+    .auth-hero-aside::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('../assets/hero-bg.png');
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      background-size: 85%;
+      opacity: 0.12;
+      pointer-events: none;
+      filter: saturate(1.2);
+    }
+
+    .auth-hero-aside::after {
+      content: '';
+      position: absolute;
+      top: -10%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .auth-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .auth-aside-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      margin-bottom: 40px;
+    }
+
+    .auth-aside-brand img {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: contain;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+      border: 1.5px solid var(--color-soft-gold, #d97706);
+    }
+
+    .auth-aside-brand .brand-text h3 {
+      font-family: var(--font-serif, "Playfair Display", serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    .auth-aside-brand .brand-text span {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-soft-gold, #f59e0b);
+      font-weight: 700;
+      display: block;
+      margin-top: 3px;
+    }
+
+    .auth-aside-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(217, 119, 6, 0.16);
+      border: 1px solid rgba(217, 119, 6, 0.35);
+      color: var(--color-soft-gold, #f59e0b);
+      padding: 5px 14px;
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .auth-hero-aside h1.aside-title {
+      font-family: var(--font-serif, "Playfair Display", serif);
+      font-size: clamp(2rem, 2.8vw, 2.75rem);
+      line-height: 1.22;
+      color: #ffffff;
+      margin-bottom: 18px;
+    }
+
+    .auth-hero-aside p.aside-desc {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 52ch;
+      margin-bottom: 34px;
+    }
+
+    .auth-pillars {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 36px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .auth-pillars li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 0.93rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.55;
+    }
+
+    .auth-pillar-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(217, 119, 6, 0.18);
+      border: 1px solid rgba(217, 119, 6, 0.32);
+      color: var(--color-soft-gold, #f59e0b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .auth-pillar-icon svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    /* Quote Card in Aside */
+    .auth-aside-quote {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(217, 119, 6, 0.25);
+      border-radius: 14px;
+      padding: 22px 24px;
+      position: relative;
+      z-index: 2;
+      margin-top: 10px;
+    }
+
+    .auth-aside-quote p {
+      font-family: var(--font-serif, "Cormorant Garamond", serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 14px;
+    }
+
+    .auth-quotee {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .auth-quotee img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid var(--color-soft-gold, #d97706);
+    }
+
+    .auth-quotee strong {
+      font-size: 0.88rem;
+      color: #ffffff;
+      display: block;
+    }
+
+    .auth-quotee span {
+      font-size: 0.76rem;
+      color: var(--color-soft-gold, #f59e0b);
+      display: block;
+    }
+
+    .auth-aside-footer {
+      position: relative;
+      z-index: 2;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.65);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Right Main */
+    .auth-main-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-warm-bg, #fbf8f2);
+      position: relative;
+    }
+
+    @media (max-width: 640px) {
+      .auth-hero-aside {
+        padding: 40px 24px;
+      }
+      .auth-main-panel {
+        padding: 40px 20px;
+      }
+    }
+
+    .auth-card-box {
+      width: 100%;
+      max-width: 460px;
+      background: var(--color-warm-surface, #ffffff);
+      border: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.22));
+      border-radius: 20px;
+      padding: 42px 40px;
+      box-shadow: 0 16px 40px -10px rgba(8, 32, 82, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8);
+      position: relative;
+    }
+
+    @media (max-width: 480px) {
+      .auth-card-box {
+        padding: 30px 22px;
+        border-radius: 16px;
+      }
+    }
+
+    /* Tab Switcher: Sign In vs Apply */
+    .auth-tab-nav {
+      display: flex;
+      background: var(--color-warm-bg, #f3ede2);
+      border-radius: 12px;
+      padding: 4px;
+      margin-bottom: 30px;
+      border: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.18));
+    }
+
+    .auth-tab-nav a {
+      flex: 1;
+      text-align: center;
+      padding: 9px 12px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      border-radius: 9px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      color: var(--color-muted-text, #6b7280);
+    }
+
+    .auth-tab-nav a.is-active {
+      background: var(--color-warm-surface, #ffffff);
+      color: var(--color-primary, #082052);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      font-weight: 700;
+    }
+
+    .auth-card-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .auth-card-header img.card-logo {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      object-fit: contain;
+      margin: 0 auto 16px;
+      display: block;
+      box-shadow: 0 6px 18px rgba(8, 32, 82, 0.16);
+      border: 2px solid var(--color-soft-gold, #d97706);
+    }
+
+    .auth-card-header h2 {
+      font-family: var(--font-serif, "Playfair Display", serif);
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--color-dark-text, #111827);
+      margin-bottom: 6px;
+    }
+
+    .auth-card-header p {
+      font-size: 0.9rem;
+      color: var(--color-muted-text, #6b7280);
+      line-height: 1.5;
+    }
+
+    /* Form Fields */
+    .auth-card-box .field {
+      margin-bottom: 20px;
+    }
+
+    .auth-card-box .field label {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--color-dark-text, #1f2937);
+      margin-bottom: 7px;
+    }
+
+    .auth-card-box .field label .req {
+      color: #dc2626;
+      font-weight: 700;
+    }
+
+    .auth-card-box input[type="text"],
+    .auth-card-box input[type="email"],
+    .auth-card-box input[type="password"] {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 0.94rem;
+      border: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.28));
+      border-radius: 10px;
+      background: var(--color-warm-surface, #ffffff);
+      color: var(--color-dark-text, #111827);
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    }
+
+    .auth-card-box input:focus {
+      outline: none;
+      border-color: var(--color-soft-gold, #d97706);
+      box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.2);
+    }
+
+    .auth-card-box .hint {
+      font-size: 0.78rem;
+      color: var(--color-muted-text, #6b7280);
+      margin-top: 5px;
+    }
+
+    .pw-field {
+      position: relative;
+    }
+
+    .pw-toggle {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--color-muted-text, #6b7280);
+      padding: 6px;
+      border-radius: 6px;
+      display: flex;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .pw-toggle:hover {
+      color: var(--color-primary, #082052);
+    }
+
+    .pw-toggle svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    /* Checkbox */
+    .auth-remember-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 22px;
+      cursor: pointer;
+      font-size: 0.83rem;
+      color: var(--color-muted-text, #4b5563);
+      line-height: 1.45;
+    }
+
+    .auth-remember-row input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: var(--color-primary, #082052);
+    }
+
+    /* Submit Button */
+    .btn-auth-submit {
+      width: 100%;
+      padding: 13px 20px;
+      background: linear-gradient(135deg, #082052 0%, #0d2e73 100%);
+      color: #ffffff;
+      font-size: 0.96rem;
+      font-weight: 700;
+      border-radius: 10px;
+      border: 1px solid rgba(217, 119, 6, 0.4);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 18px rgba(8, 32, 82, 0.22);
+    }
+
+    .btn-auth-submit:hover {
+      background: linear-gradient(135deg, #0b2c6e 0%, #123d94 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(8, 32, 82, 0.28);
+    }
+
+    /* Divider */
+    .auth-divider-line {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 24px 0 20px;
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-muted-text, #9ca3af);
+    }
+
+    .auth-divider-line::before,
+    .auth-divider-line::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-gold-border, rgba(217, 119, 6, 0.2));
+    }
+
+    /* Social Buttons */
+    .social-auth-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .social-auth-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 11px 16px;
+      border: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.25));
+      border-radius: 10px;
+      background: var(--color-warm-surface, #ffffff);
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--color-dark-text, #1f2937);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .social-auth-btn:hover {
+      background: rgba(217, 119, 6, 0.08);
+      border-color: var(--color-soft-gold, #d97706);
+    }
+
+    .social-auth-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Footer Links in Card */
+    .auth-card-footer-links {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+      font-size: 0.84rem;
+      color: var(--color-muted-text, #6b7280);
+    }
+
+    .auth-card-footer-links a {
+      color: var(--color-primary, #082052);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .auth-card-footer-links a:hover {
+      color: var(--color-soft-gold, #d97706);
+    }
+
+    .auth-sub-nav {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--color-gold-border, rgba(217, 119, 6, 0.18));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      font-size: 0.8rem;
+    }
+  </style>
 </head>
 <body data-base="../" data-page="login">
 
-  <div class="auth-shell">
+  <div class="auth-page-shell">
 
-    <!-- LEFT: THE PITCH -->
-    <aside class="auth-aside">
-      <a class="auth-brand" href="../index.html" style="display:flex;align-items:center;gap:12px;margin-bottom:34px;">
-        <span data-mark-icon="award" aria-hidden="true" style="display:flex;color:var(--color-soft-gold);"></span>
-        <span style="color:var(--color-primary-text);font-family:var(--font-display);font-size:1.16rem;font-weight:700;line-height:1.15;">Amritha<br>Spice Mill</span>
-      </a>
 
-      <span class="eyebrow" style="color:var(--color-soft-gold);">THE TRADE DESK</span>
-      <h2>Your Lots, Your Batch Cards, Your Standing Orders</h2>
-      <p>The trade desk is where a registered kitchen keeps everything the mill knows about it: the lots bought, the granule profiles ordered, the credit terms agreed, and the one-off blends we built for you last year.</p>
+    <!-- RIGHT: THE LOGIN CARD -->
+    <main class="auth-main-panel" id="main-content">
+      <div class="auth-card-box">
 
-      <ul class="auth-points">
-        <li><span data-aside-icon="package" aria-hidden="true"></span><span>Batch cards and certificates of analysis, downloadable for any lot you have bought.</span></li>
-        <li><span data-aside-icon="truck" aria-hidden="true"></span><span>Standing orders on your usual profile, paused and resumed without a phone call.</span></li>
-        <li><span data-aside-icon="blend" aria-hidden="true"></span><span>Your blend recipes, versioned, with the change history kept on our side.</span></li>
-        <li><span data-aside-icon="clock" aria-hidden="true"></span><span>Invoices, credit balance and the next dispatch date, in one screen.</span></li>
-      </ul>
+        <!-- Tab Switcher -->
+        <nav class="auth-tab-nav" aria-label="Trade Account Actions">
+          <a href="login.html" class="is-active" aria-current="page">Sign In</a>
+          <a href="signup.html">Sign Up</a>
+        </nav>
 
-      <p style="margin-top:34px;font-size:.82rem;opacity:.75;">
-        Not registered yet? The trade desk opens Monday to Saturday, 8am – 8pm IST, and will add you in a ten-minute phone call.
-      </p>
-    </aside>
+        <!-- Brand Emblem & Title -->
+        <div class="auth-card-header">
+          <a href="../index.html">
+            <img src="../assets/logo.png" alt="Amritha Spice Mill" class="card-logo">
+          </a>
+          <h2>Login</h2>
+          <p>For registered kitchens, hotels, and distributors. Retail customers do not require an account.</p>
+        </div>
 
-    <!-- RIGHT: THE FORM -->
-    <main class="auth-main" id="main-content">
-      <div class="auth-card">
-
-        <a class="auth-brand" href="../index.html" style="gap:10px;">
-          <span data-mark-icon="award" aria-hidden="true" style="display:flex;align-items:center;color:var(--color-soft-gold);"></span>
-          <span style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--color-primary);font-weight:700;">Amritha Spice Mill</span>
-        </a>
-
-        <h1>Trade Login</h1>
-        <p class="auth-sub">Registered kitchens, hotels and distributors. Retail orders do not need an account.</p>
-
+        <!-- Deep Link Info Note -->
         <div class="note info" id="auth-note" hidden style="margin-bottom:20px;"></div>
 
+        <!-- Login Form -->
         <form id="login-form" data-validate novalidate
               data-success-title="Welcome back"
               data-success-message="This is a static build, so no session was created and nothing you typed was sent anywhere. On the live site this button emails a one-time sign-in link to the address above. To be added to the register today, call the trade desk on +91 98401 23456."
               data-success-toast="Welcome back — no session created on this static build.">
 
           <div class="field">
-            <label for="lg-email">Trade email <span class="req">*</span></label>
-            <input id="lg-email" name="email" type="email" required autocomplete="email" placeholder="you@kitchen.com">
-            <p class="hint">The address on your trade account, not a personal one.</p>
+            <label for="lg-email">Email <span class="req">*</span></label>
+            <input id="lg-email" name="email" type="email" required autocomplete="email" placeholder="chef@yourkitchen.com">
           </div>
 
           <div class="field">
-            <label for="lg-password">Passphrase <span class="req">*</span></label>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <label for="lg-password" style="margin-bottom:0;">Password <span class="req">*</span></label>
+              <a href="../pages/contact.html?topic=account" style="font-size:0.78rem;color:var(--color-primary);font-weight:600;text-decoration:none;">Forgot password?</a>
+            </div>
             <div class="pw-field">
               <input id="lg-password" name="password" type="password" required minlength="8" autocomplete="current-password" placeholder="At least 8 characters">
               <button class="pw-toggle" type="button" data-pw-toggle="lg-password" aria-label="Show passphrase" aria-pressed="false"></button>
             </div>
           </div>
 
-          <label class="checkbox-row" for="lg-remember" style="margin-bottom:20px;">
+          <label class="auth-remember-row" for="lg-remember">
             <input id="lg-remember" name="remember" type="checkbox">
-            <span>Keep me signed in on this device for 30 days. Leave unticked on a shared machine.</span>
+            <span>Keep me signed in on this device for 30 days. Leave unticked on shared workstations.</span>
           </label>
 
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+          <button type="submit" class="btn-auth-submit">Sign In</button>
+
+          <div class="auth-divider-line">or continue with</div>
+
+          <div class="social-auth-grid">
+            <a href="#" class="social-auth-btn" data-social="google">
+              <span data-social-icon="google" aria-hidden="true"></span> Google
+            </a>
+            <a href="#" class="social-auth-btn" data-social="whatsapp">
+              <span data-social-icon="whatsapp" aria-hidden="true"></span> WhatsApp
+            </a>
           </div>
 
-          <div class="auth-divider">or continue with</div>
-
-          <div class="social-login">
-            <a href="#" data-social="google"><span data-social-icon="google" aria-hidden="true"></span>Google</a>
-            <a href="#" data-social="whatsapp"><span data-social-icon="whatsapp" aria-hidden="true"></span>WhatsApp</a>
+          <div class="auth-card-footer-links">
+            <span>New kitchen or distributor? <a href="signup.html">Create new account</a></span>
           </div>
 
-          <div class="auth-links" style="margin-top:26px;">
-            <a href="../pages/contact.html?topic=account">Forgotten your passphrase?</a>
-            <span>No account? <a href="signup.html">Apply for trade access</a></span>
+          <div class="auth-sub-nav">
+            <a href="../index.html">← Back to Home</a>
+            <span>·</span>
+            <a href="../pages/contact.html">Contact Trade Desk</a>
+            <span>·</span>
+            <a href="../pages/Terms-of-service.html">Terms</a>
           </div>
 
         </form>
-
-        <p style="margin-top:30px;padding-top:22px;border-top:1px solid var(--color-gold-border);font-size:.82rem;color:var(--color-muted-text);line-height:1.7;">
-          <a href="../index.html" style="color:var(--color-primary);font-weight:700;">Back to the home page</a>
-          &nbsp;·&nbsp;
-          <a href="../pages/contact.html" style="color:var(--color-primary);font-weight:700;">Contact the trade desk</a>
-          &nbsp;·&nbsp;
-          <a href="../pages/Terms-of-service.html" style="color:var(--color-primary);font-weight:700;">Terms</a>
-        </p>
 
       </div>
     </main>

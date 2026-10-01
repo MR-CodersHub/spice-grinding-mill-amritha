@@ -6,6 +6,7 @@
   <title>Chef &amp; Restaurant Programme | Amritha Spice Mill</title>
   <meta name="description" content="Two-day, three-day and month-long kitchen programmes at the Amritha Spice Mill in Kochi: masala development, cold grinding, stock rotation and menu costing, taught on the mill floor.">
   <meta name="theme-color" content="#082052">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
 
   <script src="../src/js/theme.js"></script>
   <script src="../src/js/rtl-toggle.js"></script>
@@ -26,19 +27,35 @@
 
   <main id="main-content">
 
-    <!-- 1. PAGE HERO -->
-    <section class="page-hero">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a>
-          <span class="crumb-sep" aria-hidden="true">/</span>
-          <span class="crumb-current" aria-current="page">Chef &amp; Restaurant Programme</span>
-        </nav>
-        <span class="eyebrow">AMRITHA KITCHEN TRAINING &bull; ON THE MILL FLOOR</span>
-        <h1>Teach a Chef, Not a Recipe</h1>
-        <p>Anyone can hand you a masala formula. What a kitchen actually needs is someone who understands why the batch tastes different in October, why the cardamom went quiet, and what to do about it before the dinner service.</p>
+    <!-- 1. PAGE HERO — full-screen -->
+    <section class="h2-hero" aria-labelledby="h2-hero-heading" style="min-height: 90vh;">
+      <div class="h2-hero-bg" aria-hidden="true"></div>
+      <div class="h2-hero-overlay" aria-hidden="true"></div>
+
+      <div class="h2-hero-content">
+        <span class="h2-hero-eyebrow">AMRITHA KITCHEN TRAINING &bull; ON THE MILL FLOOR</span>
+
+        <div class="gold-divider" aria-hidden="true" style="margin: 18px auto;">
+          <span class="line"></span>
+          <span class="motif">&#10022; &#10043; &#10022;</span>
+          <span class="line right"></span>
+        </div>
+
+        <h1 class="h2-hero-heading" id="h2-hero-heading">Teach a Chef,<br>Not a Recipe</h1>
+
+        <p class="h2-hero-sub">
+          Anyone can hand you a masala formula. What a kitchen actually needs is someone who understands
+          why the batch tastes different in October, why the cardamom went quiet, and what to do about it
+          before the dinner service.
+        </p>
+
+        <div class="h2-hero-ctas">
+          <a href="#programmes" class="btn btn-gold">View Programmes</a>
+          <a href="../pages/contact.html" class="btn btn-outline-light" style="color: var(--color-soft-gold);">Book a Cohort Seat</a>
+        </div>
       </div>
     </section>
+
 
     <!-- 2. THE ARGUMENT + NUMBERS -->
     <section class="page-section" aria-labelledby="argument-heading">
@@ -82,25 +99,6 @@
       </div>
     </section>
 
-    <!-- 3. THE THREE PROGRAMMES -->
-    <section class="page-section-sm section-alt" aria-labelledby="programmes-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">THREE WAYS IN</span>
-          <h2 id="programmes-heading">The Programmes</h2>
-          <div class="gold-divider" aria-hidden="true">
-            <span class="line"></span>
-            <span class="motif">&#10022;</span>
-            <span class="line right"></span>
-          </div>
-        </div>
-
-        <div class="plan-grid" id="programme-grid">
-          <noscript><p>Enable JavaScript to see the three programmes and their dates.</p></noscript>
-        </div>
-      </div>
-    </section>
-
     <!-- 4. HOW A COHORT RUNS -->
     <section class="page-section" aria-labelledby="run-heading">
       <div class="container">
@@ -139,11 +137,6 @@
           </div>
 
           <aside class="sidebar">
-            <div class="widget widget-dark">
-              <h4>Bringing a team?</h4>
-              <p>Groups of eight or more get a private cohort on dates we agree, and we can run it at your kitchen instead of ours for the practical half.</p>
-              <a class="btn btn-gold btn-sm btn-block" href="contact.html?topic=training">Ask about a private cohort</a>
-            </div>
             <div class="widget">
               <h4>What it costs to attend</h4>
               <p style="font-size:.9rem;color:var(--color-muted-text);line-height:1.7;">Programme fees include all raw material, the two kilos you take home, lunch on both days, and the reference card. Travel and accommodation are not included.</p>
@@ -281,6 +274,14 @@
   <script src="../src/js/form-validation.js"></script>
   <script src="../src/js/pages/kit.js"></script>
   <script src="../src/js/pages/home-2.js"></script>
+
+  <script>
+    /* trigger ken-burns zoom on the hero bg */
+    document.addEventListener('DOMContentLoaded', function () {
+      var hero = document.querySelector('.h2-hero');
+      if (hero) requestAnimationFrame(function () { hero.classList.add('in-view'); });
+    });
+  </script>
 
 </body>
 </html>

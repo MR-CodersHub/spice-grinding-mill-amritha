@@ -48,7 +48,14 @@
     setText('article-category', post.category);
     setText('article-title', post.title);
     setText('article-excerpt', post.excerpt);
-    setText('article-initials', post.authorInitials);
+    if (post.authorImg) {
+      var avatarEl = K.q('#article-initials');
+      if (avatarEl) {
+        avatarEl.outerHTML = '<img id="article-initials" src="' + post.authorImg + '" alt="' + post.author + '" style="width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0;">';
+      }
+    } else {
+      setText('article-initials', post.authorInitials);
+    }
     setText('article-author', post.author);
     setText('article-role', post.authorRole);
     setText('article-date', post.date.display);
@@ -168,7 +175,14 @@
     var bio = AUTHOR_BIO[post.author] || '';
     var link = AUTHOR_LINKS[post.author];
 
-    setText('footer-initials', post.authorInitials);
+    if (post.authorImg) {
+      var footerAvatar = K.q('#footer-initials');
+      if (footerAvatar) {
+        footerAvatar.outerHTML = '<img id="footer-initials" src="' + post.authorImg + '" alt="' + post.author + '" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;">';
+      }
+    } else {
+      setText('footer-initials', post.authorInitials);
+    }
     setText('footer-name', post.author + ' — ' + post.authorRole);
     setText('footer-bio', bio);
 
@@ -218,7 +232,7 @@
     K.fill('takeaway-cards', takeaways(post).map(function (text) {
       return '<div class="icon-card reveal">' +
         '<div class="icon-wrap">' + K.icon('checkCircle') + '</div>' +
-        '<p style="margin-top:14px;font-size:.97rem;line-height:1.75;">' + K.esc(text) + '</p>' +
+        '<p style="margin-top:14px;font-size:.97rem;line-height:1.75;">' + text + '</p>' +
       '</div>';
     }).join(''));
   }

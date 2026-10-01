@@ -16,7 +16,6 @@
     { key: 'home',     label: 'Home',                href: BASE + 'index.html' },
     { key: 'home-2',   label: 'Chef Program',        href: BASE + 'pages/home-2.html' },
     { key: 'about',    label: 'Our Story',           href: BASE + 'pages/about.html' },
-    { key: 'services', label: 'Services Catalogue',  href: BASE + 'pages/services.html' },
     { key: 'pricing',  label: 'Plans & Pricing',     href: BASE + 'pages/pricing.html' },
     { key: 'blog',     label: 'The Journal',         href: BASE + 'pages/blog.html' },
     { key: 'contact',  label: 'Contact & Visit',     href: BASE + 'pages/contact.html' }
@@ -34,8 +33,7 @@
   var LEGAL_LINKS = [
     { key: 'privacy', label: 'Privacy Policy',   href: BASE + 'pages/Privacy-policy.html' },
     { key: 'terms',   label: 'Terms of Service', href: BASE + 'pages/Terms-of-service.html' },
-    { key: 'faq',     label: 'Help & FAQs',       href: BASE + 'pages/FAQ.html' },
-    { key: '404',     label: 'Sitemap',           href: BASE + 'pages/404.html' }
+    { key: 'faq',     label: 'Help & FAQs',       href: BASE + 'pages/FAQ.html' }
   ];
 
   var ICON = {
@@ -66,41 +64,14 @@
     }
 
     mount.innerHTML =
-      '<section class="newsletter-band" aria-labelledby="newsletter-heading">' +
-        '<div class="container">' +
-          '<div class="newsletter-grid">' +
-            '<div>' +
-              '<h2 id="newsletter-heading">Letters from the Mill</h2>' +
-              '<p>One short letter each month: a harvest note, one technique we have refined, ' +
-                'and first access to limited single-estate lots. No noise, unsubscribe any time.</p>' +
-            '</div>' +
-            '<form class="newsletter-form" id="newsletter-form" novalidate>' +
-              '<div class="news-field">' +
-                '<label class="sr-only" for="newsletter-email">Email address</label>' +
-                '<input class="news-input" type="email" id="newsletter-email" name="email" ' +
-                  'placeholder="you@kitchen.com" autocomplete="email" required>' +
-                '<div class="form-error" data-error-for="newsletter-email">' +
-                  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="7" x2="12" y2="13"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>' +
-                  '<span>Enter a valid email address.</span>' +
-                '</div>' +
-              '</div>' +
-              '<button type="submit" class="btn btn-gold">Join the Letter</button>' +
-            '</form>' +
-          '</div>' +
-          '<p class="newsletter-note">By subscribing you accept our ' +
-            '<a href="' + BASE + 'pages/Privacy-policy.html" style="color:var(--color-soft-gold);text-decoration:underline;">privacy policy</a>.</p>' +
-        '</div>' +
-      '</section>' +
-
-      '<div class="footer-frieze" aria-hidden="true"></div>' +
 
       '<footer class="site-footer" id="footer-contact">' +
         '<div class="container">' +
           '<div class="footer-top">' +
             '<div class="footer-brand">' +
-              '<div class="brand-footer-seal">' +
-                '<div class="footer-seal-icon">' + ICON.mortar + '</div>' +
-                '<div><h3>Amritha Spice Mill</h3><span>Traditional Craft • Estd 1948</span></div>' +
+              '<div class="brand-footer-seal" style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">' +
+                '<img src="' + BASE + 'assets/logo.png" alt="Amritha Spice Mill" class="footer-seal-img" style="width:54px;height:54px;border-radius:50%;object-fit:contain;box-shadow:0 4px 14px rgba(0,0,0,0.3);">' +
+                '<div><h3 style="margin:0;font-size:1.25rem;">Amritha Spice Mill</h3><span style="font-size:0.75rem;letter-spacing:0.14em;color:var(--color-soft-gold);text-transform:uppercase;">Traditional Craft • Estd 1948</span></div>' +
               '</div>' +
               '<p>Preserving South Asia\'s proud heritage of slow stone-ground spices, pure ' +
                 'single-estate harvests, and custom bespoke masala recipes for discerning ' +

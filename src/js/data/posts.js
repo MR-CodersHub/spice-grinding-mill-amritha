@@ -30,6 +30,7 @@
       author: 'Ravi Menon',
       authorRole: 'Third-generation Master Miller',
       authorInitials: 'RM',
+      authorImg: '../assets/men3.jpg',
       date: d('2026-08-18'),
       readTime: 9,
       views: 4820,

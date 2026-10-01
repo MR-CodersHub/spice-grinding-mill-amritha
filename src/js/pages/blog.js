@@ -49,7 +49,9 @@
           '<p>' + K.esc(post.excerpt) + '</p>' +
           '<div class="article-meta" style="margin-top:22px;">' +
             '<div class="article-author">' +
-              '<span class="avatar">' + K.esc(post.authorInitials) + '</span>' +
+              (post.authorImg
+                ? '<img src="' + K.esc(post.authorImg) + '" alt="' + K.esc(post.author) + '" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;">'
+                : '<span class="avatar">' + K.esc(post.authorInitials) + '</span>') +
               '<div><strong>' + K.esc(post.author) + '</strong><span>' + K.esc(post.authorRole) + '</span></div>' +
             '</div>' +
             '<span class="meta-pill">' + K.icon('calendar') + K.esc(post.date.display) + '</span>' +

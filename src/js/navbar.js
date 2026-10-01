@@ -15,11 +15,13 @@
 
   var LINKS = [
     { key: 'home',      label: 'Home',      href: BASE + 'index.html' },
+    { key: 'home-2',     label: 'Home 2',     href: BASE + 'pages/home-2.html' },
     { key: 'about',     label: 'About',     href: BASE + 'pages/about.html' },
     { key: 'services',  label: 'Services',  href: BASE + 'pages/services.html' },
     { key: 'blog',      label: 'Journal',   href: BASE + 'pages/blog.html' },
     { key: 'pricing',   label: 'Pricing',   href: BASE + 'pages/pricing.html' },
-    { key: 'contact',   label: 'Contact',   href: BASE + 'pages/contact.html' }
+    { key: 'contact',   label: 'Contact',   href: BASE + 'pages/contact.html' },
+    { key: 'login',     label: 'Login',     href: BASE + 'auth/login.html', isCta: true }
   ];
 
   /* Secondary destinations shown inside the mobile drawer */
@@ -77,6 +79,14 @@
 
   function navItem(item) {
     var active = PAGE === item.key || (item.key === 'home' && PAGE === 'home-2');
+    if (item.isCta) {
+      return (
+        '<li class="nav-cta-item">' +
+          '<a href="' + item.href + '" class="nav-btn-login' + (active ? ' active' : '') + '"' +
+          (active ? ' aria-current="page"' : '') + '>' + item.label + '</a>' +
+        '</li>'
+      );
+    }
     return (
       '<li><a href="' + item.href + '" class="nav-link' + (active ? ' active' : '') + '"' +
       (active ? ' aria-current="page"' : '') + '>' + item.label + '</a></li>'
@@ -116,27 +126,10 @@
       document.body.insertBefore(mount, document.body.firstChild);
     }
 
-    var leftLinks = LINKS.slice(0, 3).map(navItem).join('');
-    var rightLinks = LINKS.slice(3).map(navItem).join('');
+    var leftLinks = LINKS.slice(0, 4).map(navItem).join('');
+    var rightLinks = LINKS.slice(4, 8).map(navItem).join('');
 
     mount.innerHTML =
-      '<a href="#main-content" class="skip-link">Skip to main content</a>' +
-
-      '<aside class="top-bar" aria-label="Announcement">' +
-        '<div class="container top-bar-inner">' +
-          '<div class="top-bar-notice">' +
-            '<span class="dot"></span>' +
-            '<span>TRADITIONAL COLD STONE-GROUND • 100% UNADULTERATED SINGLE-ORIGIN SPICES</span>' +
-            '<span class="dot"></span>' +
-          '</div>' +
-          '<div class="tb-links">' +
-            '<span class="tb-sep">|</span>' +
-            '<a href="' + BASE + 'pages/home-2.html">Chef Program</a>' +
-            '<a href="' + BASE + 'pages/FAQ.html">FAQs</a>' +
-            '<a href="' + BASE + 'auth/login.html">Trade Login</a>' +
-          '</div>' +
-        '</div>' +
-      '</aside>' +
 
       '<header class="sticky-header" id="header">' +
         '<div class="container">' +
@@ -145,16 +138,14 @@
 
             '<div class="brand-seal-wrapper">' +
               '<a href="' + BASE + 'index.html" class="brand-seal" aria-label="Amritha Spice Mill — home">' +
-                SEAL_SVG +
-                '<div class="brand-title">Amritha</div>' +
-                '<div class="brand-sub">ESTD 1948</div>' +
+                '<img src="' + BASE + 'assets/logo.png" alt="Amritha Spice Mill — ESTD 1948" class="brand-seal-logo" width="96" height="96">' +
               '</a>' +
             '</div>' +
 
+            '<ul class="nav-menu nav-menu-right">' + rightLinks + '</ul>' +
+
             '<div class="nav-actions">' +
               toolsMarkup() +
-              '<ul class="nav-menu nav-menu-right">' + rightLinks + '</ul>' +
-              ctaMarkup() +
               '<button type="button" class="mobile-toggle" id="mobile-toggle-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">&#9776;</button>' +
             '</div>' +
           '</nav>' +
@@ -163,7 +154,10 @@
 
       '<div class="mobile-nav" id="mobile-nav" aria-hidden="true">' +
         '<div class="mobile-nav-header">' +
-          '<div class="brand-title" style="font-family:var(--font-serif);font-size:1.4rem;color:var(--color-primary);">Amritha Spice Mill</div>' +
+          '<div style="display:flex;align-items:center;gap:12px;">' +
+            '<img src="' + BASE + 'assets/logo.png" alt="Amritha Spice Mill" style="width:40px;height:40px;border-radius:50%;object-fit:contain;box-shadow:0 2px 8px rgba(0,0,0,0.2);">' +
+            '<div class="brand-title" style="font-family:var(--font-serif);font-size:1.35rem;color:var(--color-primary);font-weight:700;">Amritha Spice Mill</div>' +
+          '</div>' +
           '<button type="button" class="mobile-nav-close" style="font-size:28px;background:none;color:var(--color-primary);cursor:pointer;" aria-label="Close navigation menu">&times;</button>' +
         '</div>' +
         '<ul class="mobile-nav-links">' +

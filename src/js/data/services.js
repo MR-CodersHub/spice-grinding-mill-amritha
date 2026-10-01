@@ -406,7 +406,7 @@
       reviews: 174,
       turnaround: '24-hour dispatch',
       minOrder: '10 kg / month',
-      tags: ['Scheduled dispatch', 'Calibrated heat', 'Batch cards', 'Cold chain aware'],
+      tags: ['Easy dispatch', 'Calibrated heat', 'Batch cards', 'Cold chain aware'],
       overview: [
         'The problem with commercial spice is drift. A dish tastes right in the month you built the menu and slightly off three months later, because the lot changed and nobody noticed. We fix that by specifying finished behaviour rather than a botanical name: colour value, pungency in Scoville units, and a defined mesh.',
         'Every account gets a scheduled despatch calendar. You tell us the volume, we hold the slot. If you need a mid-month top-up it goes out the same day, and if a shipment is going to be late you hear from us before you notice the empty shelf.',
@@ -648,7 +648,7 @@
       name: 'Spice Sourcing & Flavour Consultancy',
       category: 'advisory',
       icon: 'consult',
-      tagline: 'Recipe development, cost-per-portion and menu engineering',
+      tagline: 'Recipe development, and menu engineering',
       summary:
         'A flavour consultant sits with your team to build menus that taste consistent, cost what you planned, and survive a change of supplier or a change of season.',
       image: IMG.thaliNorth,
@@ -657,7 +657,7 @@
       reviews: 58,
       turnaround: '2–6 weeks',
       minOrder: 'Consulting day',
-      tags: ['Menu development', 'Cost per portion', 'Supplier independent', 'On site'],
+      tags: ['Menu', 'Cost / portion', 'Supplier independent', 'On site'],
       overview: [
         'Most kitchen problems are not cooking problems. A dish drifts because the spice spec was never written down. It gets expensive because nobody calculated the cost per portion once the free refills were counted. It fails in a new city because the recipe assumed a local ingredient that does not exist there.',
         'A consultancy engagement starts in your kitchen. We taste the current food, read the menu, and interview whoever actually cooks it. From that we produce a written specification per dish — colour, heat, mesh, salt load, yield and cost per portion — that any competent kitchen can execute and any supplier can quote against.',
