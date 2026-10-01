@@ -469,6 +469,32 @@ h1, h2, h3, h4, .serif-font {
   margin-top: 2px;
 }
 
+/* Brand text shown only on small screens (next to logo) */
+.nav-brand-text {
+  display: none;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.nav-brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+.nav-brand-sub {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--color-soft-gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
 /* Nav Actions (Tools & Mobile Toggle) */
 .nav-actions {
   position: absolute;
@@ -1868,7 +1894,14 @@ h1, h2, h3, h4, .serif-font {
   .brand-seal-wrapper {
     position: static;
     transform: none;
-    margin: 0 auto;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-brand-text {
+    display: flex;
   }
 
   .brand-seal {

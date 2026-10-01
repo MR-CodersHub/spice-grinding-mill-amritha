@@ -26,11 +26,7 @@
 
   /* Secondary destinations shown inside the mobile drawer */
   var SECONDARY = [
-    { key: 'home-2',       label: 'Chef & Restaurant Program', href: BASE + 'pages/home-2.html' },
-    { key: 'faq',          label: 'Help Centre & FAQs',         href: BASE + 'pages/FAQ.html' },
-    { key: 'privacy',      label: 'Privacy Policy',            href: BASE + 'pages/Privacy-policy.html' },
-    { key: 'terms',        label: 'Terms of Service',          href: BASE + 'pages/Terms-of-service.html' },
-    { key: 'coming-soon',  label: 'Mill Upgrades · Coming Soon', href: BASE + 'pages/coming-soon.html' }
+
   ];
 
   var SEAL_SVG =
@@ -139,6 +135,10 @@
             '<div class="brand-seal-wrapper">' +
               '<a href="' + BASE + 'index.html" class="brand-seal" aria-label="Amritha Spice Mill — home">' +
                 '<img src="' + BASE + 'assets/logo.png" alt="Amritha Spice Mill — ESTD 1948" class="brand-seal-logo" width="96" height="96">' +
+              '</a>' +
+              '<a href="' + BASE + 'index.html" class="nav-brand-text" aria-hidden="true">' +
+                '<span class="nav-brand-name">Amritha Spice Mill</span>' +
+                '<span class="nav-brand-sub">Traditional Craft &bull; Estd 1948</span>' +
               '</a>' +
             '</div>' +
 

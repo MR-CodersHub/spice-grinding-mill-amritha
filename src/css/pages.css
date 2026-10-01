@@ -198,8 +198,13 @@
 }
 
 [data-theme="dark"] .brand-title,
-[data-theme="dark"] .brand-sub {
+[data-theme="dark"] .brand-sub,
+[data-theme="dark"] .nav-brand-name {
   color: #E7D9BE;
+}
+
+[data-theme="dark"] .nav-brand-sub {
+  color: var(--color-soft-gold);
 }
 
 /* btn-outline-dark on cream/light surfaces — keep navy in dark mode */
